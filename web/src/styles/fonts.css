@@ -1,0 +1,11 @@
+@font-face {
+  font-family: 'EvelethCleanRegular';
+  src: url('../fonts/EvelethCleanRegular.eot');
+  src: url('../fonts/EvelethCleanRegular.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/EvelethCleanRegular.svg#EvelethCleanRegular') format('svg'),
+       url('../fonts/EvelethCleanRegular.ttf') format('truetype'),
+       url('../fonts/EvelethCleanRegular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+

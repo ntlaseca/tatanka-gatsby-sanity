@@ -1,6 +1,7 @@
 import { Link } from 'gatsby'
 import React from 'react'
 import Icon from './icons'
+import Logo from './icons/logo'
 import { cn } from '../lib/helpers'
 
 import styles from './header.module.css'
@@ -9,7 +10,9 @@ const Header = ({ onHideNav, onShowNav, showNav, siteTitle }) => (
   <div className={styles.root}>
     <div className={styles.wrapper}>
       <h1 className={styles.branding}>
-        <Link to='/'>{siteTitle}</Link>
+        <Link to='/'>
+          <Logo height='4em' />
+        </Link>
       </h1>
 
       <button className={styles.toggleNavButton} onClick={showNav ? onHideNav : onShowNav}>

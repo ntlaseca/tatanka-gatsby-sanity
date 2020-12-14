@@ -2,20 +2,18 @@
 @import '../styles/vars.css';
 
 .content {
-  min-height: calc(100% - 73px - 152px);
-
-  @media (--media-min-small) {
-    min-height: calc(100% - 90px - 169px);
-  }
+  min-height: calc(100% - 16rem);
 }
 
 .footer {
-
+  background-color: var(--color-blue);
+  color: var(--color-white);
+  letter-spacing: .1em;
+  text-transform: uppercase;
 }
 
 .footerWrapper {
   box-sizing: border-box;
-  max-width: 960px;
   padding: 1.5em;
   margin: 0 auto;
 
@@ -24,15 +22,19 @@
   }
 }
 
+.companyLogo {
+}
+
 .companyAddress {
   text-align: center;
   margin: 0 0 1rem;
 }
 
 .siteInfo {
-  text-align: center;
-  font-size: var(--font-small-size);
-  line-height: var(--font-small-line-height);
+  text-align: left;
+  font-size: var(--font-micro-size);
+  line-height: var(--font-micro-line-height);
+  margin: 1rem 0 0 0;
 
   @nest & a {
     color: inherit;
