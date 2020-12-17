@@ -27,12 +27,6 @@ export default {
       name: 'body',
       title: 'Body',
       type: 'blockContent'
-    },
-    {
-      name: 'relatedProjects',
-      title: 'Related projects',
-      type: 'array',
-      of: [{ type: 'reference', to: { type: 'project' } }]
     }
   ],
   preview: {

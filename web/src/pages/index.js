@@ -1,12 +1,14 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import { mapEdgesToNodes, filterOutDocsWithoutSlugs } from '../lib/helpers'
-import BlogPostPreviewGrid from '../components/blog-post-preview-grid'
 import Container from '../components/container'
+import Hero from '../components/hero' 
 import GraphQLErrorList from '../components/graphql-error-list'
 import ProjectPreviewGrid from '../components/project-preview-grid'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
+import BigSection from '../components/big-section'
+import FormSection from '../components/form-section'
 
 export const query = graphql`
   query IndexPageQuery {
@@ -16,7 +18,7 @@ export const query = graphql`
       keywords
     }
 
-    projects: allSanityProject(limit: 6, sort: { fields: [publishedAt], order: DESC }) {
+    projects: allSanityProject(sort: { fields: [publishedAt], order: DESC }) {
       edges {
         node {
           id
@@ -43,43 +45,7 @@ export const query = graphql`
             alt
           }
           title
-          _rawExcerpt
-          slug {
-            current
-          }
-        }
-      }
-    }
-
-    posts: allSanityPost(limit: 6, sort: { fields: [publishedAt], order: DESC }) {
-      edges {
-        node {
-          id
-          publishedAt
-          mainImage {
-            crop {
-              _key
-              _type
-              top
-              bottom
-              left
-              right
-            }
-            hotspot {
-              _key
-              _type
-              x
-              y
-              height
-              width
-            }
-            asset {
-              _id
-            }
-            alt
-          }
-          title
-          _rawExcerpt
+          _rawBody
           slug {
             current
           }
@@ -117,15 +83,15 @@ const IndexPage = props => {
   return (
     <Layout>
       <SEO title={site.title} description={site.description} keywords={site.keywords} />
-      <Container>
+        <Hero />
         <h1 hidden>Welcome to {site.title}</h1>
         {projectNodes && (
           <ProjectPreviewGrid
-            title='Latest projects'
             nodes={projectNodes}
           />
         )}
-      </Container>
+        <BigSection />
+        <FormSection />
     </Layout>
   )
 }

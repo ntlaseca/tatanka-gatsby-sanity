@@ -5,39 +5,53 @@
 
 .title {
   composes: responsiveTitle1 from './typography.module.css';
+  font-family: var(--font-header-typeface);
+  letter-spacing: .2rem;
 }
 
 .mainImage {
+  grid-column: span 1;
   position: relative;
   background: #eee;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  min-height: 25vh;
   
   @media (--media-min-small) {
-    min-height: 25vh;
+    grid-column: span 2;
+    min-height: 50vh;
   }
 }
 
 .grid {
   display: grid;
-  grid-template-columns: 1fr;
-  row-gap: 2rem;
+  grid-template-columns: repeat(5,1fr);
 
-  @media (--media-min-medium) {
-    grid-template-columns: 2fr 3fr;
-  }
+  @media (--media-min-medium) {}
 }
 
 .mainContent {
-  padding: 1.5em;
+  grid-column: span 1;
+  padding: 2em;
+  font-family: var(--font-body-typeface);
+  color: var(--color-white);
 
   @media (--media-min-small) {
-    padding: 2em;
+    grid-column: span 3;
+    padding: 4em;
+  }
+
+  @media (--media-min-medium) {
+    
+  }
+
+  @nest & h1 {
+    text-transform: uppercase;
   }
 
   @nest & a {
-    color: var(--color-accent);
+    color: var(--color-yellow);
 
     @media (hover: hover) {
       @nest &:hover {
@@ -47,7 +61,16 @@
   }
 }
 
-.metaContent {
+.fillBrown {
+  background-color: var(--color-brown);
+}
+
+.fillSand {
+  background-color: var(--color-sand);
+}
+
+.texturize {
+  background-image: url('../assets/asfalt-light.png');
 }
 
 .publishedAt {

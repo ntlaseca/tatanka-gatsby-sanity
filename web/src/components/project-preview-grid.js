@@ -13,7 +13,8 @@ function ProjectPreviewGrid (props) {
             <li key={node.id}>
               <Project {...node} />
             </li>
-          ))}
+          ))
+        }
       </ul>
     </div>
   )

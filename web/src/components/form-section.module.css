@@ -1,0 +1,14 @@
+@import '../styles/media-queries.css';
+@import '../styles/vars.css';
+
+.root {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  grid-gap: 3rem;
+  padding: 1.5em;
+
+  @media (--media-min-medium) {
+    padding: 3em;
+  }
+}

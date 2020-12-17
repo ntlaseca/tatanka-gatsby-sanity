@@ -1,0 +1,32 @@
+@import '../styles/media-queries.css';
+@import '../styles/vars.css';
+
+.root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-image: url('../assets/mountains_01.jpg');
+  background-position: center;
+  background-size: cover;
+}
+
+.textBox {
+  padding: 4em 2em;
+  /* background: var(--color-brown); */
+
+  @nest & h1 {
+    color: var(--color-white);
+    filter: drop-shadow(0 0.25rem 0.25rem rgba(0,0,0,.2));
+  }
+
+  @nest & a {
+    filter: brightness(100%) drop-shadow(0 0.25rem 0.25rem rgba(0,0,0,.2));
+  }
+}
+
+.title {
+  composes: responsiveTitle1 from './typography.module.css';
+  font-family: var(--font-header-typeface);
+  letter-spacing: .2rem;
+}
