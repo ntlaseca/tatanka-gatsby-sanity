@@ -1,7 +1,12 @@
 @import '../styles/media-queries.css';
 @import '../styles/vars.css';
 
-.root {}
+.root {
+  display: grid;
+  grid-template-columns: repeat(5,1fr);
+
+  @media (--media-min-medium) {}
+}
 
 .title {
   composes: responsiveTitle1 from './typography.module.css';
@@ -22,13 +27,6 @@
     grid-column: span 2;
     min-height: 50vh;
   }
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(5,1fr);
-
-  @media (--media-min-medium) {}
 }
 
 .mainContent {

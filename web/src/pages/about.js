@@ -41,7 +41,7 @@ const AboutPage = props => {
     <Layout>
       <SEO title={page.title} />
       <Hero />
-      <section className={styles.grid}>
+      <section className={styles.root}>
         <div className={[styles.mainContent,styles.fillBrown].join(' ')}>
           <h1 className={styles.title}>Why Fly Private?</h1>
           <p className={paragraph}>
@@ -65,7 +65,7 @@ const AboutPage = props => {
         >
         </div>
       </section>
-      <section className={styles.grid}>
+      <section className={styles.root}>
         <div
           className={styles.mainImage}
           style={{

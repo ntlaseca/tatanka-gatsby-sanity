@@ -16,11 +16,11 @@
   /* background: var(--color-brown); */
 
   @nest & h1 {
-    color: var(--color-white);
+    color: var(--color-yellow);
     filter: drop-shadow(0 0.25rem 0.25rem rgba(0,0,0,.2));
   }
 
-  @nest & a {
+  & a {
     filter: brightness(100%) drop-shadow(0 0.25rem 0.25rem rgba(0,0,0,.2));
   }
 }
