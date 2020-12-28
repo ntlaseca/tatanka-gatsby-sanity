@@ -1,8 +1,8 @@
 {
   "private": false,
-  "name": "example-company-website-gatsby-sanity-combo",
+  "name": "tatanka-gatsby-sanity",
   "version": "1.0.0",
-  "author": "Sanity <hello@sanity.io>",
+  "author": "Nate Tlaseca <nate@whitepantsagency.com>",
   "engines": {
     "node": "10.x"
   },
@@ -25,5 +25,8 @@
   "devDependencies": {
     "lerna": "^3.14.1",
     "rimraf": "^2.6.3"
+  },
+  "dependencies": {
+    "gatsby-source-sanity": "^6.0.4"
   }
 }

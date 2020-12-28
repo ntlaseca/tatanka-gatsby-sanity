@@ -1,8 +1,8 @@
 {
   "private": false,
-  "name": "example-company-website-gatsby-sanity-combo-frontend",
+  "name": "tatanka-gatsby-sanity",
   "version": "1.0.0",
-  "author": "Sanity <hello@sanity.io>",
+  "author": "Nate Tlaseca <nate@whitepantsagency.com>",
   "engines": {
     "node": "10.x"
   },

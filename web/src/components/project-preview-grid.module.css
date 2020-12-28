@@ -2,7 +2,6 @@
 @import '../styles/vars.css';
 
 .root {
-  margin: 2rem 0 4rem;
 }
 
 .headline {
@@ -22,16 +21,6 @@
   list-style: none;
   display: grid;
   grid-template-columns: 1fr;
-  grid-column-gap: 2rem;
-  grid-row-gap: 2rem;
-
-  @media (--media-min-small) {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  @media (--media-min-medium) {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
 }
 
 .browseMoreNav {

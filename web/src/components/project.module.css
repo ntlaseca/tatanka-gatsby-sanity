@@ -1,41 +1,55 @@
 @import '../styles/media-queries.css';
 @import '../styles/vars.css';
 
-.root {}
+.root {
+  display: grid;
+  grid-template-columns: repeat(5,1fr);
+
+  @media (--media-min-medium) {}
+}
 
 .title {
   composes: responsiveTitle1 from './typography.module.css';
+  font-family: var(--font-header-typeface);
+  letter-spacing: .2rem;
 }
 
 .mainImage {
+  grid-column: span 1;
   position: relative;
   background: #eee;
-  padding-bottom: calc(9 / 16 * 100%);
-
-  @nest & img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    vertical-align: top;
-    object-fit: cover;
-  }
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-column-gap: 2em;
-
-  @media (--media-min-medium) {
-    grid-template-columns: 3fr 1fr;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 25vh;
+  
+  @media (--media-min-small) {
+    grid-column: span 2;
+    min-height: 50vh;
   }
 }
 
 .mainContent {
+  grid-column: span 1;
+  padding: 2em;
+  font-family: var(--font-body-typeface);
+  color: var(--color-white);
+
+  @media (--media-min-small) {
+    grid-column: span 3;
+    padding: 4em;
+  }
+
+  @media (--media-min-medium) {
+    
+  }
+
+  @nest & h1 {
+    text-transform: uppercase;
+  }
+
   @nest & a {
-    color: var(--color-accent);
+    color: var(--color-yellow);
 
     @media (hover: hover) {
       @nest &:hover {
@@ -45,7 +59,16 @@
   }
 }
 
-.metaContent {
+.fillBrown {
+  background-color: var(--color-brown);
+}
+
+.fillSand {
+  background-color: var(--color-sand);
+}
+
+.texturize {
+  background-image: url('../assets/asfalt-light.png');
 }
 
 .publishedAt {

@@ -1,8 +1,7 @@
-# A sample company website built with [Gatsby](https://www.gatsbyjs.org/) & [Sanity.io](https://www.sanity.io)
+# Tatanka ✈️
 
-This examples combines [Gatsby](https://www.gatsbyjs.org/) site generation with [Sanity](https://www.sanity.io) content management in a neat little company website. Read [the blog post](https://www.sanity.io/blog/get-started-with-gatsby-and-structured-content) and [see the getting started video](https://www.youtube.com/watch?v=qU4lFYp3KiQ).
+Built with [Gatsby](https://www.gatsbyjs.org/) & [Sanity.io](https://www.sanity.io).
 
-- [Features](#features)
 - [Installation](#installation)
 - [Enable Gatsby watch mode for drafts](#enable-gatsby-watch-mode-for-drafts)
 - [Usage example](#usage-example)
@@ -12,27 +11,6 @@ This examples combines [Gatsby](https://www.gatsbyjs.org/) site generation with 
 - [Deployment](#deployment)
 - [Contributing](#contributing)
 - [License](#license)
-
-[![Watch a video about the company website built with Gatsby using Sanity.io as a headless CMS](https://cdn.sanity.io/images/3do82whm/production/4f652e6d114e7010aa633b81cbcb97c335980fc8-1920x1080.png?w=500)](https://www.youtube.com/watch?v=STtpXBvJmDA)
-
-[See the example up and running](https://www.youtube.com/watch?v=STtpXBvJmDA)
-
-## Features
-
-**A company website built with Gatsby**
-  * 📡 Real-time content preview in development
-  * ⏱ Fast & frugal builds
-  * 🗃 No accidental missing fields/types
-  * 🧰 Full Render Control with Portable Text
-  * 📸 gatsby-image support
-  * 🔧 Minimal configuration
-
-**Sanity Studio with a schema for**
-  * 🏢 Company info
-  * 📃 Pages
-  * 👨🏼‍🎨 Projects
-  * 👩🏾‍💻 People
-  * 📰 Blog posts
 
 ## Installation
 
