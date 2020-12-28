@@ -1,4 +1,4 @@
-# Tatanka
+# Tatanka ✈️
 
 Built with [Gatsby](https://www.gatsbyjs.org/) & [Sanity.io](https://www.sanity.io).
 
@@ -11,10 +11,6 @@ Built with [Gatsby](https://www.gatsbyjs.org/) & [Sanity.io](https://www.sanity.
 - [Deployment](#deployment)
 - [Contributing](#contributing)
 - [License](#license)
-
-[![Watch a video about the company website built with Gatsby using Sanity.io as a headless CMS](https://cdn.sanity.io/images/3do82whm/production/4f652e6d114e7010aa633b81cbcb97c335980fc8-1920x1080.png?w=500)](https://www.youtube.com/watch?v=STtpXBvJmDA)
-
-[See the example up and running](https://www.youtube.com/watch?v=STtpXBvJmDA)
 
 ## Installation
 
