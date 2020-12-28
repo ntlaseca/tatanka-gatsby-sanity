@@ -3,9 +3,12 @@
 
 .root {
   display: grid;
-  grid-template-columns: repeat(5,1fr);
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
 
-  @media (--media-min-medium) {}
+  @media (--media-min-large) {
+    grid-template-columns: repeat(5,1fr);
+  }
 }
 
 .title {
@@ -15,27 +18,31 @@
 }
 
 .mainImage {
-  grid-column: span 1;
-  position: relative;
+  grid-column: auto;
+  grid-row: auto;
   background: #eee;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  min-height: 25vh;
+  max-height: 25vh;
   
-  @media (--media-min-small) {
+  @media (--media-min-large) {
     grid-column: span 2;
-    min-height: 50vh;
+    max-height: 50vh;
+  }
+
+  @nest & img {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    object-fit: cover;
   }
 }
 
 .mainContent {
-  grid-column: span 1;
+  grid-column: auto;
   padding: 2em;
   font-family: var(--font-body-typeface);
   color: var(--color-white);
 
-  @media (--media-min-small) {
+  @media (--media-min-large) {
     grid-column: span 3;
     padding: 4em;
   }

@@ -10,9 +10,14 @@ function Project (props) {
   const { _rawBody, title, mainImage } = props
   return (
     <div className={styles.root}>
-      {props.mainImage && mainImage.asset && (
+      {mainImage && mainImage.asset && (
         <div className={styles.mainImage}>
-          <image src={imageUrlFor(buildImageObj(mainImage))} />
+          <img
+            src={imageUrlFor(buildImageObj(mainImage))
+              .maxWidth(900)
+              .url()}
+            alt={mainImage.alt}
+          />
         </div>
       )}
       <div className={[styles.mainContent,styles.fillBrown].join(' ')}>

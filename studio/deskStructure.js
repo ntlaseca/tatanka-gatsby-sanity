@@ -31,10 +31,6 @@ export default () =>
         .schemaType('project')
         .child(S.documentTypeList('project')),
       S.listItem()
-        .title('Blog posts')
-        .schemaType('post')
-        .child(S.documentTypeList('post').title('Blog posts')),
-      S.listItem()
         .title('Pages')
         .child(
           S.list()
