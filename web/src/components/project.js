@@ -11,12 +11,8 @@ function Project (props) {
   return (
     <div className={styles.root}>
       {props.mainImage && mainImage.asset && (
-        <div
-          className={styles.mainImage}
-          style={{
-            backgroundImage: `url(${imageUrlFor(buildImageObj(mainImage))})`
-          }}
-        >
+        <div className={styles.mainImage}>
+          <image src={imageUrlFor(buildImageObj(mainImage))} />
         </div>
       )}
       <div className={[styles.mainContent,styles.fillBrown].join(' ')}>
