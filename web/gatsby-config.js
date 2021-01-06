@@ -1,4 +1,7 @@
-require('dotenv').config()
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV || "development"}`
+})
+const path = require('path')
 const {
   api: { projectId, dataset }
 } = requireConfig('../studio/sanity.json')
@@ -7,6 +10,15 @@ module.exports = {
   plugins: [
     'gatsby-plugin-postcss',
     'gatsby-plugin-react-helmet',
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'images',
+        path: path.join(__dirname, 'src', 'images')
+      }
+    },
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
     {
       resolve: 'gatsby-source-sanity',
       options: {

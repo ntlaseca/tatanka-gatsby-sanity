@@ -1,68 +1,40 @@
 import S from '@sanity/desk-tool/structure-builder'
-import { MdBusiness, MdSettings } from 'react-icons/md'
-import { FaFile } from 'react-icons/fa'
+import { MdBusiness as PageIcon, MdMenu, MdSettings, MdHome } from 'react-icons/md'
+import landingPages from './src/structure/landingPages'
+import PreviewIFrame from './src/components/previewIFrame'
 
-const hiddenTypes = ['category', 'companyInfo', 'page', 'person', 'post', 'project', 'siteSettings']
+const hiddenDocTypes = (listItem) =>
+  !['route', 'navigationMenu', 'post', 'page', 'siteSettings', 'author', 'category'].includes(
+    listItem.getId()
+  )
 
 export default () =>
   S.list()
     .title('Content')
     .items([
-      S.listItem()
-        .title('Site Settings')
+      S.documentListItem()
+        .schemaType('siteSettings')
+        .title('Site settings')
+        .icon(MdSettings)
         .child(
-          S.editor()
-            .id('siteSettings')
+          S.document()
             .schemaType('siteSettings')
             .documentId('siteSettings')
-        )
-        .icon(MdSettings),
-      S.listItem()
-        .title('Company Info')
-        .child(
-          S.editor()
-            .id('companyInfo')
-            .schemaType('companyInfo')
-            .documentId('companyInfo')
-        )
-        .icon(MdBusiness),
-      S.listItem()
-        .title('Projects')
-        .schemaType('project')
-        .child(S.documentTypeList('project')),
-      S.listItem()
-        .title('Pages')
-        .child(
-          S.list()
-            .title('Pages')
-            .items([
-              S.listItem()
-                .title('About')
-                .child(
-                  S.editor()
-                    .id('aboutPage')
-                    .schemaType('page')
-                    .documentId('about')
-                )
-                .icon(FaFile),
-              S.listItem()
-                .title('Contact')
-                .child(
-                  S.editor()
-                    .id('contactPage')
-                    .schemaType('page')
-                    .documentId('contact')
-                )
-                .icon(FaFile)
-            ])
+            .views([S.view.form(), PreviewIFrame()])
         ),
-      S.listItem()
-        .title('People')
-        .schemaType('person')
-        .child(S.documentTypeList('person').title('People')),
-      S.listItem()
-        .title('Categories')
-        .schemaType('category')
-        .child(S.documentTypeList('category').title('Categories')),
-      ...S.documentTypeListItems().filter(listItem => !hiddenTypes.includes(listItem.getId()))
+      S.documentListItem()
+        .title('Frontpage')
+        .schemaType('page')
+        .icon(MdHome)
+        .child(
+          S.document()
+            .schemaType('page')
+            .documentId('frontpage')
+            .views([S.view.form(), PreviewIFrame()])
+        ),
+      landingPages,
+      // This returns an array of all the document types
+      // defined in schema.js. We filter out those that we have
+      // defined the structure above
+      ...S.documentTypeListItems().filter(hiddenDocTypes),
     ])

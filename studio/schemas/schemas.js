@@ -3,48 +3,65 @@ import createSchema from 'part:@sanity/base/schema-creator'
 
 // Then import schema types from any plugins that might expose them
 import schemaTypes from 'all:part:@sanity/base/schema-type'
+import localeString from './objects/localeString'
 
-// We import object and document schemas
-import blockContent from './blockContent'
-import blockText from './blockText'
-import category from './category'
-import companyInfo from './companyInfo'
-import figure from './figure'
-import mainImage from './mainImage'
-import page from './page'
-import person from './person'
-import post from './post'
-import postAuthor from './postAuthor'
-import project from './project'
-import projectMember from './projectMember'
-import siteSettings from './siteSettings'
-import slideshow from './slideshow'
+// document schemas
+import navMenu from './documents/navMenu'
+import author from './documents/author'
+import category from './documents/category'
+import post from './documents/post'
+import page from './documents/page'
+import siteSettings from './documents/siteSettings'
+import route from './documents/route'
 
-// Then we give our schema to the builder and provide the result to Sanity
+import experiment from './objects/experiment'
+import simpleBlockContent from './objects/simpleBlockContent'
+
+import * as plugs from './plugs'
+import plugDefaultFields from './plugs/_plugDefaultFields'
+
+// Object types
+import { instagram, videoEmbed } from './objects/embeds'
+import cta from './objects/cta'
+import bodyPortableText from './objects/bodyPortableText'
+import excerptPortableText from './objects/excerptPortableText'
+import mainImage from './objects/mainImage'
+import authorReference from './objects/authorReference'
+import link from './objects/link'
+import variation from './objects/variation'
+import openGraph from './objects/openGraph'
+import latex from './latex'
+
+const allPlugs = Object.values(plugs).map((plug) => {
+  return { ...plug, fields: plugDefaultFields.concat(plug.fields) }
+})
+
 export default createSchema({
-  // We name our schema
-  name: 'default',
-  // Then proceed to concatenate our our document type
-  // to the ones provided by any plugins that are installed
-  types: schemaTypes.concat([
-    // The following are document types which will appear
-    // in the studio.
-    blockContent,
-    blockText,
-    category,
-    companyInfo,
-    figure,
-    mainImage,
-    page,
-    person,
-    post,
-    postAuthor,
-    project,
-    projectMember,
-    siteSettings,
-    slideshow
-
-    // When added to this list, object types can be used as
-    // { type: 'typename' } in other document schemas
-  ])
+  name: 'blog',
+  types: schemaTypes // Built-in types
+    // Our custom types
+    .concat([
+      latex,
+      localeString,
+      variation,
+      openGraph,
+      experiment,
+      route,
+      link,
+      simpleBlockContent,
+      cta,
+      siteSettings,
+      post,
+      navMenu,
+      page,
+      category,
+      author,
+      mainImage,
+      authorReference,
+      instagram,
+      videoEmbed,
+      bodyPortableText,
+      excerptPortableText,
+    ])
+    .concat(allPlugs),
 })

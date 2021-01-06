@@ -1,35 +1,60 @@
-import React from 'react'
-import { Link } from 'gatsby'
+import React from "react";
+import Header from "./header";
+import Footer from "./footer";
+import "../styles/layout.css";
 
-import Header from './header'
-import Logo from './icons/logo'
-import Facebook from './icons/facebook'
-import Instagram from './icons/instagram'
-import Twitter from './icons/twitter'
+class Layout extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      scrolled: false,
+    };
+  }
 
-import '../styles/layout.css'
-import styles from './layout.module.css'
+  componentDidMount() {
+    window.addEventListener("scroll", this.toggleBodyClass);
+    this.toggleBodyClass();
+  }
 
-const Layout = ({ children, onHideNav, onShowNav, showNav, siteTitle }) => (
-  <>
-    <Header siteTitle={siteTitle} onHideNav={onHideNav} onShowNav={onShowNav} showNav={showNav} />
-    <div className={styles.content}>{children}</div>
-    <footer className={styles.footer}>
-      <div className={styles.footerWrapper}>
-        <div className={styles.companyLogo}>
-          <Logo />
-        </div>
-        <div className={styles.social}>
-          <Facebook />
-          <Instagram />
-          <Twitter />
-        </div>
-        <div className={styles.siteInfo}>
-          Tatanka Travel © {new Date().getFullYear()}. All rights reserved.
-        </div>
-      </div>
-    </footer>
-  </>
-)
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.toggleBodyClass);
+  }
 
-export default Layout
+  toggleBodyClass = () => {
+    if (this.state.scrolled && window.scrollY <= 10) {
+      this.setState({ scrolled: false });
+    } else if (!this.state.scrolled && window.scrollY > 10) {
+      this.setState({ scrolled: true });
+    }
+  };
+
+  render() {
+    const {
+      children,
+      onHideNav,
+      onShowNav,
+      showNav,
+      siteTitle,
+      navMenuItems,
+      textWhite = true,
+    } = this.props;
+    const { scrolled } = this.state;
+    return (
+      <>
+        <Header
+          navMenuItems={navMenuItems}
+          siteTitle={siteTitle}
+          onHideNav={onHideNav}
+          onShowNav={onShowNav}
+          showNav={showNav}
+          scrolled={scrolled}
+          textWhite={textWhite}
+        />
+        <>{children}</>
+        <Footer siteTitle={siteTitle} />
+      </>
+    );
+  }
+}
+
+export default Layout;
