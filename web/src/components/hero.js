@@ -32,6 +32,7 @@ function Hero(props) {
       className={styles.root}
       style={{backgroundImage: `url(${img})`}}
     >
+      {img}
       <Logo />
     </div>
   )

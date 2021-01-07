@@ -1,7 +1,9 @@
 require('dotenv').config({
   path: `.env.${process.env.NODE_ENV || "development"}`
 })
+
 const path = require('path')
+
 const {
   api: { projectId, dataset }
 } = requireConfig('../studio/sanity.json')
