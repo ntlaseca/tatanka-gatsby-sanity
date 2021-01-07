@@ -3,13 +3,9 @@
 Built with [Gatsby](https://www.gatsbyjs.org/) & [Sanity.io](https://www.sanity.io).
 
 - [Installation](#installation)
-- [Enable Gatsby watch mode for drafts](#enable-gatsby-watch-mode-for-drafts)
-- [Usage example](#usage-example)
 - [Development setup](#development-setup)
   - [Run it](#run-it)
-  - [Development workflow](#development-workflow)
 - [Deployment](#deployment)
-- [Contributing](#contributing)
 - [License](#license)
 
 ## Installation
@@ -26,12 +22,6 @@ npm install -g @sanity/cli
 npm run init
 
 ```
-
-## Usage example
-
-This project demos Sanity.io with Gatsby using our [source plugin](https://www.gatsbyjs.org/packages/gatsby-source-sanity). It's a good starter for a simple company site, a portfolio site for an agency or a personal blog with an attached portfolio.
-
-We tried to strike a balance between a useful example and a minimal footprint to make it easier to iterate on design and content model. [Let us know](https://slack.sanity.io) should you have questions!
 
 ## Development setup
 
