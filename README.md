@@ -14,8 +14,6 @@ Built with [Gatsby](https://www.gatsbyjs.org/) & [Sanity.io](https://www.sanity.
 
 ## Installation
 
-Read the [step-by-step blog post](https://www.sanity.io/blog/how-to-quickly-set-up-a-gatsby-js-jamstack-website-with-a-headless-cms).
-
 ```sh
 git clone git@github.com:sanity-io/example-company-website-gatsby-sanity-combo.git
 cd example-company-website-gatsby-sanity-combo
@@ -28,20 +26,6 @@ npm install -g @sanity/cli
 npm run init
 
 ```
-
-See the [getting started video](https://www.youtube.com/watch?v=qU4lFYp3KiQ) for a walkthrough of the installation.
-
-## Enable Gatsby watch mode for drafts
-
-We have enabled the watch mode in the `gatsby-source-sanity` plugin, which means that your frontend will automatically update with content changes whenever you publish them. If you want the frontend to show content changes in real time, you must do the following:
-
-* Go to [manage.sanity.io](https://manage.sanity.io) and find your project (or run the command `sanity manage` in the studio folder)
-* Navigate to Settings->API and scroll down to the **Tokens** section
-* Add a new token and give it **read** privileges.
-* Copy the `.env-example` file to a file called `.env` in the `/web` folder
-* Add your new token to the key: `SANITY_TOKEN="<token here>"`
-
-If you restart the local development server, it will now show unpublished changes from the Studio. Note that the `.env` file is ignored by Git, because the token gives access to unpublished content in the API.
 
 ## Usage example
 
@@ -60,18 +44,6 @@ npm start
 # GraphiQL explorer at http://localhost:8000/___graphql
 ```
 
-
-
-
-### Development workflow
-
-We wrote a [blog post](https://www.sanity.io/blog/get-started-with-gatsby-and-structured-content) about how to use this example, but if you would like to just start tinkering:
-
-- The Sanity Studio keeps its schemas in `./studio/schemas`. We will hot reload the editor when you edit them so just start experimenting. [Read more about our schemas here](https://www.sanity.io/docs/content-studio/the-schema).
-- We followed Gatsby conventions and [you can read all about them here](https://www.gatsbyjs.org/tutorial/).
-- If you want Gatsby to not throw errors on missing fields for unpopulated data you need to redeploy the GraphQL API so we can generate schemas – `npm run graphql-deploy`
-
-
 ## Deployment
 
 ```sh
@@ -84,25 +56,6 @@ npm run sanity-deploy
 # Build & deploy to Zeit's Now. Remember to set `basePath` to "/studio" in sanity.json
 npm run now-deploy
 ```
-
-> **Deploy on Netlify:** If you want to deploy the Gatsby site to Netlify we added a netlify.toml config for you.
->
-> Fork or clone the example to your GitHub account. After adding your repo to Netlify you’ll get automatic builds & deploys when pushing to master. You can also add a [webhook](https://www.sanity.io/docs/webhooks) to get deploys on content changes.
-
-
-**Deploy on Cloudflare:** If you want to deploy the Gatsby site to Cloudflare we added a wrangler.toml and `workers-site/` to both studio and web.
-
-* Follow quickstart for wrangler: https://developers.cloudflare.com/workers/quickstart
-* Edit wrangler.toml's according to where you'd like studio and web to get deployed to
-* Run `npm run worker-deploy`
-
-## Contributing
-
-1. [Fork it](https://https://github.com/sanity-io/example-company-website-gatsby-sanity-combo/fork)
-2. Create your feature branch (`git checkout -b feature/fooBar`)
-3. Commit your changes (`git commit -am 'Add some fooBar'`)
-4. Push to the branch (`git push origin feature/fooBar`)
-5. Create a new Pull Request
 
 ## License
 
