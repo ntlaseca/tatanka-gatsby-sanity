@@ -25,6 +25,7 @@
     "@cloudflare/wrangler": "^1.12.3",
     "@sanity/block-content-to-react": "^2.0.7",
     "@sanity/image-url": "^0.140.19",
+    "autoprefixer": "^10.2.1",
     "date-fns": "^1.30.1",
     "dotenv": "^8.2.0",
     "gatsby": "^2.29.2",
@@ -36,14 +37,15 @@
     "gatsby-source-filesystem": "^2.1.47",
     "gatsby-source-sanity": "^5.0.6",
     "gatsby-transformer-sharp": "^2.10.0",
+    "katex": "^0.11.1",
     "postcss-import": "^12.0.1",
     "postcss-preset-env": "^6.7.0",
-    "katex": "^0.11.1",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-helmet": "^5.2.1",
     "react-instagram-embed": "^2.0.0",
-    "react-player": "^1.15.2"
+    "react-player": "^1.15.2",
+    "tailwindcss": "^2.0.2"
   },
   "devDependencies": {
     "eslint": "^6.8.0",

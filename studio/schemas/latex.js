@@ -10,6 +10,7 @@ const Preview = (props) => {
 export default {
   type: 'object',
   name: 'math',
+  title: 'Math',
   fields: [
     {
       type: 'text',

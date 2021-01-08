@@ -51,6 +51,10 @@
     
   }
 
+  @nest & p {
+    font-size: 1rem;
+  }
+
   @nest & h1 {
     text-transform: uppercase;
   }

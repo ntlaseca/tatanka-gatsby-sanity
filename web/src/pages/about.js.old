@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import GraphQLErrorList from '../components/graphql-error-list'
+import Errors from '../components/errors'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
 import Hero from '../components/hero'
@@ -9,11 +9,51 @@ import { responsiveTitle1, paragraph } from '../components/typography.module.css
 import styles from '../components/project.module.css'
 
 export const query = graphql`
+  fragment SanityImage on SanityMainImage {
+    alt
+    crop {
+      _key
+      _type
+      top
+      bottom
+      left
+      right
+    }
+    hotspot {
+      _key
+      _type
+      x
+      y
+      height
+      width
+    }
+    asset {
+      _id
+      metadata {
+        lqip
+        dimensions {
+          aspectRatio
+          width
+          height
+        }
+      }
+    }
+  }
+
   query AboutPageQuery {
     page: sanityPage(_id: { regex: "/(drafts.|)about/" }) {
-      id
+      ...PageInfo
+    }
+
+    site: sanitySiteSettings(_id: { regex: "/(drafts.|)siteSettings/" }) {
       title
-      _rawBody
+      openGraph {
+        title
+        description
+        image {
+          ...SanityImage
+        }
+      }
     }
   }
 `
@@ -23,9 +63,7 @@ const AboutPage = props => {
 
   if (errors) {
     return (
-      <Layout>
-        <GraphQLErrorList errors={errors} />
-      </Layout>
+      <Errors errors={errors} />
     )
   }
 
@@ -39,7 +77,11 @@ const AboutPage = props => {
 
   return (
     <Layout>
-      <SEO title={page.title} />
+      <SEO
+        title={pageTitle}
+        description={site.description}
+        keywords={site.keywords}
+      />
       <Hero />
       <section className={styles.root}>
         <div className={[styles.mainContent,styles.fillBrown].join(' ')}>

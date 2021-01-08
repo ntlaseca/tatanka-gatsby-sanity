@@ -1,7 +1,11 @@
 @import '../styles/media-queries.css';
 @import '../styles/fonts.css';
 
-:root {
+/*
+ * Statically sized elements
+ */
+
+ :root {
   --base-unit: 20;
 
   /* Font sizes */
@@ -23,10 +27,6 @@
   --font-header-typeface: 'Eveleth Clean', sans-serif;
   --font-body-typeface: 'Cabin', sans-serif;
 }
-
-/*
- * Statically sized elements
- */
 
 .title1 {
   font-size: var(--font-title1-size);

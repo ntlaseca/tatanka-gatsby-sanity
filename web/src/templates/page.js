@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import { graphql } from "gatsby";
 
 import Hero from "../components/hero";
-import InfoRows from "../components/InfoRows";
+import InfoRows from "../components/info-rows";
 import CTAColumns from "../components/cta-columns";
 import CTA from "../components/cta";
-import Pricing from "../components/pricing";
+import FullpageBlock from "../components/fullpage-block";
 import { TopWave, BottomWave } from "../components/wave";
 
 import GraphQLErrorList from "../components/graphql-error-list";
@@ -24,6 +24,12 @@ export const query = graphql`
       }
     }
     site: sanitySiteSettings(_id: { regex: "/(drafts.|)siteSettings/" }) {
+      primaryColor {
+        hex
+      }
+      secondaryColor {
+        hex
+      }
       title
       openGraph {
         title
@@ -62,8 +68,8 @@ const Page = (props) => {
     .map((c, i) => {
       let el = null;
       switch (c._type) {
-        case "pricing":
-          el = <Pricing key={c._key} {...c} />;
+        case "fullpageBlock":
+          el = <FullpageBlock key={c._key} {...c} />;
           break;
         case "infoRows":
           el = <InfoRows key={c._key} {...c} />;
@@ -94,6 +100,11 @@ const Page = (props) => {
       }
       return el;
     });
+
+  const gradient = {
+    from: (site.primaryColor && site.primaryColor.hex) || "#d53369",
+    to: (site.secondaryColor && site.secondaryColor.hex) || "#daae51",
+  };
 
   const menuItems = page.navMenu && (page.navMenu.items || []);
   const pageTitle = data.route && !data.route.useSiteTitle && page.title;

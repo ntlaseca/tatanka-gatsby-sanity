@@ -1,29 +1,22 @@
 :root {
-  --font-family-sans: "Source Sans Pro", sans-serif;
+  --base-unit: 20;
 
-  --color-black: #202123;
-  --color-dark-gray: #32373e;
-  --color-gray: #697a90;
-  --color-light-gray: #b4bcc7;
-  --color-very-light-gray: rgb(242, 244, 245);
-  --color-white: #fff;
-  --color-accent: #156dff;
+  /* Font sizes */
+  --font-micro-size: calc(10 / var(--base-unit) * 1rem);
+  --font-micro-line-height: 1;
+  --font-small-size: calc(16 / var(--base-unit) * 1rem);
+  --font-small-line-height: calc(18 / 14);
+  --font-base-size: calc(var(--base-unit) / 18 * 100%);
+  --font-base-line-height: calc(32 / var(--base-unit));
+  --font-large-size: calc(26 / var(--base-unit) * 1rem);
+  --font-large-line-height: calc(26 / 16);
+  --font-title3-size: calc(48 / var(--base-unit) * 1rem);
+  --font-title3-line-height: calc(28 / 24);
+  --font-title2-size: calc(64 / var(--base-unit) * 1rem);
+  --font-title2-line-height: calc(36 / 32);
+  --font-title1-size: calc(80 / var(--base-unit) * 1rem);
+  --font-title1-line-height: calc(56 / 44);
 
-  /* Typography */
-  --unit: 16;
-  --font-micro-size: calc(10 / var(--unit) * 1rem); /* 10px */
-  --font-micro-line-height: calc(12 / 10); /* 12px */
-  --font-small-size: calc(14 / var(--unit) * 1rem); /* 14px */
-  --font-small-line-height: calc(21 / 14); /* 21px */
-  --font-base-size: 1em; /* 16px */
-  --font-base-line-height: calc(24 / var(--unit)); /* 24px */
-  --font-large-size: calc(18 / var(--unit) * 1rem); /* 18px */
-  --font-large-line-height: calc(27 / 18); /* 27px */
-
-  --font-title3-size: calc(21 / var(--unit) * 1rem); /* 21px */
-  --font-title3-line-height: calc(30 / 21); /* 30px */
-  --font-title2-size: calc(24 / var(--unit) * 1rem); /* 24px */
-  --font-title2-line-height: calc(33 / 24); /* 33px */
-  --font-title1-size: calc(49 / var(--unit) * 1rem); /* 49px */
-  --font-title1-line-height: calc(57 / 49); /* 57px */
+  --font-header-typeface: 'Eveleth Clean', sans-serif;
+  --font-body-typeface: 'Cabin', sans-serif;
 }

@@ -22,7 +22,7 @@ export default {
       title: 'Page sections',
       description: 'Add, edit, and reorder sections',
       of: [
-        { type: 'pricing' },
+        { type: 'fullpageBlock' },
         { type: 'uiComponentRef' },
         { type: 'hero' },
         { type: 'infoRows' },

@@ -1,6 +1,7 @@
 export default {
   type: 'object',
   name: 'pricing',
+  title: 'Pricing',
   fields: [
     {
       type: 'string',
