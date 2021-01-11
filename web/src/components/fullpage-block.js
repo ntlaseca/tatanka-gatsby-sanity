@@ -5,6 +5,7 @@ import PortableText from './portableText';
 import CTALink from "./CTALink";
 import clientConfig from '../../client-config';
 
+import { button } from './button.module.css'
 import styles from './fullpage-block.module.css'
 
 const maybeImage = illustration => {
@@ -32,7 +33,7 @@ const FullpageBlock = props => {
         {props.cta && props.cta.title && (
           <CTALink
             {...props.cta}
-            buttonActionClass="mx-auto ml-4 hover:underline bg-white text-gray-800 font-bold rounded-full my-6 py-4 px-8 shadow-lg"
+            buttonActionClass={button}
           />
         )}
       </div>

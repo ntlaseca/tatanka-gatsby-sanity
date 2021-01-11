@@ -1,6 +1,5 @@
 import React from 'react'
 
-import PortableText from './portableText'
 import Logo from './icons/logo'
 import clientConfig from '../../client-config'
 

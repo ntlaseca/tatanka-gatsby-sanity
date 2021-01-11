@@ -8,6 +8,7 @@ import Twitter from './icons/twitter'
 
 import '../styles/layout.css'
 import styles from './layout.module.css'
+import FormSection from './form-section'
 
 class Layout extends React.Component {
   constructor(props) {

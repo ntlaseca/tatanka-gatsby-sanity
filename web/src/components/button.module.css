@@ -1,7 +1,7 @@
 @import '../styles/media-queries.css';
 @import '../styles/vars.css';
 
-.root {
+.button {
   composes: base from './typography.module.css';
   font-family: var(--font-body-typeface);
   color: var(--color-brown) !important;
@@ -12,12 +12,18 @@
   display: inline-block;
   padding: 1em 2em;
   margin-top: 1em;
+  border: solid .125em transparent;
   border-radius: .25em;
   background-color: var(--color-yellow);
   filter: brightness(100%) drop-shadow(0 0.25rem 0.25rem rgba(0,0,0,.2));
   transition: all 200ms ease;
+  cursor: pointer;
 
   @nest &:hover {
-    filter: brightness(90%);
+    background-color: var(--color-orange);
+  }
+
+  @nest &:active {
+    filter: brightness(80%);
   }
 }
