@@ -12,17 +12,17 @@
   --font-micro-size: calc(10 / var(--base-unit) * 1rem);
   --font-micro-line-height: 1;
   --font-small-size: calc(16 / var(--base-unit) * 1rem);
-  --font-small-line-height: calc(18 / 14);
+  --font-small-line-height: calc(18 / 16);
   --font-base-size: calc(var(--base-unit) / 18 * 100%);
   --font-base-line-height: calc(32 / var(--base-unit));
   --font-large-size: calc(26 / var(--base-unit) * 1rem);
   --font-large-line-height: calc(26 / 16);
-  --font-title3-size: calc(48 / var(--base-unit) * 1rem);
-  --font-title3-line-height: calc(28 / 24);
-  --font-title2-size: calc(64 / var(--base-unit) * 1rem);
-  --font-title2-line-height: calc(36 / 32);
+  --font-title3-size: calc(40 / var(--base-unit) * 1rem);
+  --font-title3-line-height: calc(48 / 40);
+  --font-title2-size: calc(60 / var(--base-unit) * 1rem);
+  --font-title2-line-height: calc(72 / 60);
   --font-title1-size: calc(80 / var(--base-unit) * 1rem);
-  --font-title1-line-height: calc(56 / 44);
+  --font-title1-line-height: calc(96 / 80);
 
   --font-header-typeface: 'Eveleth Clean', sans-serif;
   --font-body-typeface: 'Cabin', sans-serif;
@@ -96,12 +96,12 @@
   line-height: var(--font-title3-line-height);
   margin: 0 0 2rem 0;
 
-  @media (--media-min-small) {
+  @media (--media-min-medium) {
     font-size: var(--font-title2-size);
     line-height: var(--font-title2-line-height);
   }
 
-  @media (--media-min-medium) {
+  @media (--media-min-large) {
     font-size: var(--font-title1-size);
     line-height: var(--font-title1-line-height);
   }

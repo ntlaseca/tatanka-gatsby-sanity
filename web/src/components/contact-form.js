@@ -6,7 +6,7 @@ import CTALink from "./CTALink";
 import clientConfig from '../../client-config';
 
 import { button } from './button.module.css'
-import styles from './fullpage-block.module.css'
+import styles from './contact-form.module.css'
 
 const maybeImage = illustration => {
   let img = null
@@ -27,13 +27,33 @@ const maybeImage = illustration => {
   return img
 };
 
-const FullpageBlock = props => {
+const ContactForm = props => {
   const img = maybeImage(props.illustration)
   return (
     <section className={styles.root} style={{backgroundImage: `url(${img})`, backgroundColor: `${props.colors.value}`}}>
-      <div className={styles.textBox}>
-        <h1 className={styles.title}>{props.header}</h1>
+      <div>
+        <h2 className={styles.title}>{props.header}</h2>
         <PortableText blocks={props.text} />
+      </div>
+      <div className={styles.formWrapper}>
+        <form action="">
+          <div className={styles.firstName}>
+            <label for="">First name</label>
+            <input type="text"></input>
+          </div>
+          <div className={styles.lastName}>
+            <label for="">Last name</label>
+            <input type="text"></input>
+          </div>
+          <div className={styles.email}>
+            <label for="">Email address</label>
+            <input type="text"></input>
+          </div>
+          <div className={styles.phone}>
+            <label for="">Phone</label>
+            <input type="text"></input>
+          </div>
+        </form>
         {props.cta && props.cta.title && (
           <CTALink
             {...props.cta}
@@ -45,4 +65,4 @@ const FullpageBlock = props => {
   )
 }
 
-export default FullpageBlock
+export default ContactForm

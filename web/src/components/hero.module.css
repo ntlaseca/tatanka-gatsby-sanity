@@ -1,5 +1,4 @@
 @import '../styles/media-queries.css';
-@import '../styles/vars.css';
 
 .root {
   display: grid;
@@ -14,6 +13,13 @@
 
     @nest & svg {
       height: 40vmin;
-      opacity: 50%;
+      opacity: 0;
+      animation: fadeOut ease 2s;
     }
+}
+
+@keyframes fadeOut {
+  0% {opacity:.5;}
+  50% {opacity:.5;}
+  100% {opacity:0;}
 }

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Logo from './icons/logo'
+import Icon from './icons'
 import clientConfig from '../../client-config'
 
 import styles from './hero.module.css'
@@ -26,7 +26,7 @@ function Hero(props) {
   const img = maybeImage(props.illustration)
   return (
     <section className={styles.root} style={{backgroundImage: `url(${img})`}}>
-      <Logo />
+      <Icon symbol="logo" />
     </section>
   )
 }

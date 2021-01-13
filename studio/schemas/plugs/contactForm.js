@@ -1,7 +1,7 @@
 export default {
   type: 'object',
-  name: 'fullpageBlock',
-  title: 'Fullpage block',
+  name: 'contactForm',
+  title: 'Contact form',
   fields: [
     {
       name: 'label',
@@ -18,10 +18,6 @@ export default {
     {
       name: 'illustration',
       type: 'illustration'
-    },
-    {
-      name: 'cta',
-      type: 'cta'
     },
     {
       title: "Color List",
@@ -45,6 +41,10 @@ export default {
         ]
       }
     },
+    {
+      name: 'cta',
+      type: 'cta'
+    }
   ],
   preview: {
     select: {
@@ -53,7 +53,7 @@ export default {
     },
     prepare({ title, disabled }) {
       return {
-        title: `Fullpage block: ${disabled ? 'DISABLED' : title}`
+        title: `Contact form: ${disabled ? 'DISABLED' : title}`
       }
     }
   }

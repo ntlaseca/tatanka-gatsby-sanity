@@ -6,7 +6,7 @@
   --font-micro-line-height: 1;
   --font-small-size: calc(16 / var(--base-unit) * 1rem);
   --font-small-line-height: calc(18 / 14);
-  --font-base-size: calc(var(--base-unit) / 18 * 100%);
+  --font-base-size: calc(var(--base-unit) / 16 * 100%);
   --font-base-line-height: calc(32 / var(--base-unit));
   --font-large-size: calc(26 / var(--base-unit) * 1rem);
   --font-large-line-height: calc(26 / 16);

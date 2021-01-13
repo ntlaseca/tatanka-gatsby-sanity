@@ -1,7 +1,7 @@
 export default {
   type: 'object',
-  name: 'ctaColumns',
-  title: 'CTA columns',
+  name: 'imageGrid',
+  title: 'Image grid',
   fields: [
     {
       type: 'string',
@@ -9,8 +9,8 @@ export default {
     },
     {
       type: 'array',
-      name: 'columns',
-      of: [{ type: 'ctaPlug' }]
+      name: 'images',
+      of: [{ type: 'illustration' }]
     }
   ],
   preview: {
@@ -19,7 +19,7 @@ export default {
     },
     prepare({ title }) {
       return {
-        title: `CTA columns: ${title}`
+        title: `Photo grid: ${title}`
       }
     }
   }

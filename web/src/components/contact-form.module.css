@@ -1,5 +1,4 @@
 @import '../styles/media-queries.css';
-@import '../styles/vars.css';
 
 .root {
   display: grid;
@@ -11,8 +10,12 @@
   background-position: center;
 
   @media (--media-min-large) {
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1fr 2fr;
     padding: 4em;
+  }
+
+  @nest & button {
+    margin-top: 2rem;
   }
 }
 
@@ -35,13 +38,19 @@
     }
 
     & .email {
-      grid-column: span 2;
+      grid-column: span 1;
+      grid-row: 2;
+    }
+
+    & .phone {
+      grid-column: span 1;
       grid-row: 2;
     }
 
     & label {
       text-transform: uppercase;
       letter-spacing: .1em;
+      line-height: 1;
     }
 
     & input {
@@ -49,7 +58,7 @@
       display: block;
       width: 100%;
       margin-top: .5rem;
-      padding: 1rem .75rem;
+      padding: 1rem .5rem;
       font-size: inherit;
       border: none;
       border-radius: .25rem;
@@ -58,5 +67,14 @@
 }
 
 .title {
-  composes: responsiveTitle1 from './typography.module.css';
+  composes: responsiveTitle2 from './typography.module.css';
+  font-family: var(--font-header-typeface);
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--color-brown);
+  margin: 0;
+
+  @media (--media-min-large) {
+    text-align: left;
+  }
 }

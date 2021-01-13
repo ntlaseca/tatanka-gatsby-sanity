@@ -1,0 +1,9 @@
+.root {
+  
+}
+
+.title {
+  composes: responsiveTitle1 from './typography.module.css';
+  text-transform: uppercase;
+  font-family: var(--font-header-typeface);
+}
