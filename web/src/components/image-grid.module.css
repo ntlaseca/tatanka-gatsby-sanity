@@ -2,7 +2,7 @@
 
 .root {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(1fr);
   grid-gap: 2em;
   grid-template-rows: auto;
 
@@ -24,6 +24,10 @@
   }
 
   @media (--media-min-medium) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (--media-min-large) {
     grid-template-columns: repeat(3, 1fr);
   }
 }
@@ -35,8 +39,12 @@
   text-align: center;
   font-family: var(--font-header-typeface);
   font-size: 1rem;
-  color: var(--color-white);
+  color: var(--color-yellow);
   transition: all ease 300ms;
+
+  @media (--media-min-medium) {
+   font-size: 1.5rem;   
+  }
 
   @nest & img {
     position: absolute;
