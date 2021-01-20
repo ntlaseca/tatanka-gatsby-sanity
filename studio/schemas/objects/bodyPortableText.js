@@ -1,16 +1,14 @@
 import React from 'react'
 
 import {
-  mathInlineIcon,
-  mathIcon,
   highlightIcon,
   highlightRender,
 } from '../components/PortableTextEditorComponents'
 
 export default {
+  title: 'Post body',
   name: 'bodyPortableText',
   type: 'array',
-  title: 'Post body',
   of: [
     {
       type: 'block',
@@ -69,15 +67,17 @@ export default {
                 title: 'URL',
                 name: 'href',
                 type: 'url'
+              },
+              {
+                title: 'Open in new tab',
+                name: 'blank',
+                description: 'Read https://css-tricks.com/use-target_blank/',
+                type: 'boolean'
               }
             ]
           }
         ]
       },
-      of: [
-        { type: 'authorReference' },
-        { type: 'math', icon: mathInlineIcon, title: 'Inline math' }
-      ]
     },
     // You can add additional types here. Note that you can't use
     // primitive types such as 'string' and 'number' in the same array
@@ -88,6 +88,6 @@ export default {
     },
     { type: 'instagram' },
     { type: 'videoEmbed' },
-    { type: 'math', icon: mathIcon, title: 'Math block' }
+    { type: 'slideshow' }
   ]
 }

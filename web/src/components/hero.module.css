@@ -1,5 +1,4 @@
 @import '../styles/media-queries.css';
-@import '../styles/vars.css';
 
 .root {
   display: grid;
@@ -9,11 +8,18 @@
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background-position: center;
+  background-position: center left;
   background-size: cover;
 
     @nest & svg {
       height: 40vmin;
-      opacity: 50%;
+      opacity: 0;
+      animation: fadeOut ease 2s;
     }
+}
+
+@keyframes fadeOut {
+  0% {opacity:.5;}
+  50% {opacity:.5;}
+  100% {opacity:0;}
 }

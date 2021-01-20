@@ -40,7 +40,7 @@
   }
 
   @nest & svg {
-    height: 2rem;
+    height: 3rem;
 
     @media (--media-min-medium) {
       height: 4rem;

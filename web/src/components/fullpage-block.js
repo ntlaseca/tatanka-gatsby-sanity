@@ -10,7 +10,12 @@ import styles from './fullpage-block.module.css'
 
 const maybeImage = illustration => {
   let img = null
-  if (illustration && illustration.image && illustration.image.asset && !illustration.disabled) {
+  if (
+    illustration &&
+    illustration.image &&
+    illustration.image.asset &&
+    !illustration.disabled
+  ) {
     const fluidProps = getFluidGatsbyImage(
       illustration.image.asset._id,
       { maxWidth: 2160 },
@@ -25,11 +30,10 @@ const maybeImage = illustration => {
 const FullpageBlock = props => {
   const img = maybeImage(props.illustration)
   return (
-    <section className={styles.root} style={{backgroundImage: `url(${img})`}}>
+    <section className={styles.root} style={{backgroundImage: `url(${img})`, backgroundColor: `${props.colors.value}`}}>
       <div className={styles.textBox}>
-        <h1 className={styles.title}>
-          <PortableText blocks={props.text} />
-        </h1>
+        <h1 className={styles.title}>{props.header}</h1>
+        <PortableText blocks={props.text} />
         {props.cta && props.cta.title && (
           <CTALink
             {...props.cta}

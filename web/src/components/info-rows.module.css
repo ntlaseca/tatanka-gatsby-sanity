@@ -1,5 +1,4 @@
 @import '../styles/media-queries.css';
-@import '../styles/vars.css';
 
 .root {
   display: grid;
@@ -20,12 +19,11 @@
 .mainImage {
   grid-column: auto;
   grid-row: auto;
-  background: #eee;
-  max-height: 25vh;
+  background-position: center;
+  background-size: cover;
   
   @media (--media-min-large) {
     grid-column: span 2;
-    max-height: 50vh;
   }
 
   @nest & img {
@@ -49,10 +47,6 @@
 
   @media (--media-min-medium) {
     
-  }
-
-  @nest & p {
-    font-size: 1rem;
   }
 
   @nest & h1 {

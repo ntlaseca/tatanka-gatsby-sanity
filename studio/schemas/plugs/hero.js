@@ -21,6 +21,11 @@ export default {
       type: 'illustration'
     },
     {
+      title: 'Video file',
+      name: 'video',
+      type: 'mux.video'
+    },
+    {
       name: 'cta',
       type: 'cta'
     }

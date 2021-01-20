@@ -1,14 +1,17 @@
 import React from "react";
+import { getFluidGatsbyImage } from "gatsby-source-sanity";
+
 import PortableText from "./portableText";
+import CTALink from "./CTALink";
+import clientConfig from "../../client-config";
 import { cn } from "../lib/helpers"
 
-import { getFluidGatsbyImage } from "gatsby-source-sanity";
-import clientConfig from "../../client-config";
-
+import { button } from './button.module.css'
+import { paragraph } from './typography.module.css'
 import styles from './info-rows.module.css'
 
 const maybeImage = illustration => {
-  let img = null;
+  let img = null
   if (
     illustration &&
     illustration.disabled !== true &&
@@ -19,24 +22,28 @@ const maybeImage = illustration => {
       illustration.image.asset._id,
       { maxWidth: 960 },
       clientConfig.sanity
-    );
+    )
 
-    img = (
-      <img src={fluidProps.src} alt={illustration.image.alt} />
-    );
+    img = fluidProps.src
   }
-  return img;
+  return img
 };
 
 const InfoRow = props => {
   const img = maybeImage(props.illustration);
   return (
     <div className={styles.root}>
-      <div className={cn(styles.mainContent, styles.fillBrown)}>
+      <div className={styles.mainContent} style={{backgroundColor: `${props.colors.value}`}}>
         <h1 className={styles.title}>{props.title}</h1>
         <PortableText blocks={props.text} />
+        {props.cta && props.cta.title && (
+          <CTALink
+            {...props.cta}
+            buttonActionClass={button}
+          />
+        )}
       </div>
-      {img && <div className={styles.mainImage}>{img}</div>}
+      {img && <div className={styles.mainImage} style={{backgroundImage: `url(${img})`}}></div>}
     </div>
   );
 };
@@ -45,10 +52,16 @@ const InfoRowFlipped = props => {
   const img = maybeImage(props.illustration);
   return (
     <div className={styles.root}>
-      {img && <div className={styles.mainImage}>{img}</div>}
-      <div className={cn(styles.mainContent, styles.fillBrown)}>
+      {img && <div className={styles.mainImage} style={{backgroundImage: `url(${img})`}}></div>}
+      <div className={styles.mainContent} style={{backgroundColor: `${props.colors.value}`}}>
         <h1 className={styles.title}>{props.title}</h1>
         <PortableText blocks={props.text} />
+        {props.cta && props.cta.title && (
+          <CTALink
+            {...props.cta}
+            buttonActionClass={button}
+          />
+        )}
       </div>
     </div>
   );

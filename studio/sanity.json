@@ -24,7 +24,8 @@
     "dashboard-widget-document-list",
     "dashboard-widget-structure-menu",
     "media",
-    "mux-input"
+    "mux-input",
+    "color-list"
   ],
   "parts": [
     {

@@ -1,30 +1,34 @@
 import React from "react";
-import PortableText from "../components/portableText";
+import Container from "./container"
+import PortableText from "./portableText";
 import CTALink from "./CTALink";
 
-const CTA = ({ label, title, body, ctas }) => (
-  <section className="container mx-auto text-center py-6 mb-12">
-    <h1 className="w-full my-2 text-5xl font-bold leading-tight text-center text-white">{title}</h1>
-    <div className="w-full mb-4">
-      <div className="h-1 mx-auto bg-white w-1/6 opacity-25 my-0 py-0 rounded-t"></div>
-    </div>
+import { button } from "./button.module.css"
+import styles from "./cta.module.css"
 
-    <p className="my-4 text-3xl leading-tight">
-      <PortableText blocks={body} />
-    </p>
-
-    <div className="flex">
-      {(ctas || []).map((c, i) => (
-        <div className="flex-1 text-gray-700 text-center py-2">
-          <CTALink
-            key={`cta_${i}`}
-            {...c}
-            buttonActionClass="mx-auto ml-4 hover:underline bg-white text-gray-800 font-bold rounded-full my-6 py-4 px-8 shadow-lg"
-          />
+const CTA = props => {
+  return (
+    <section className={styles.root} style={{backgroundColor: `${props.colors.value}`}}>
+      <Container>
+        <h1 className={styles.title1}>{props.title}</h1>
+        <div className="w-full mb-4">
+          <div className="h-1 mx-auto bg-white w-1/6 opacity-25 my-0 py-0 rounded-t"></div>
         </div>
-      ))}
-    </div>
-  </section>
-);
+        <PortableText blocks={props.body} />
+        <div className="">
+          {(props.ctas || []).map((c, i) => (
+            <div className="">
+              <CTALink
+                key={`cta_${i}`}
+                {...c}
+                buttonActionClass={button}
+              />
+            </div>
+          ))}
+        </div>
+      </Container>
+    </section>
+  )
+}
 
 export default CTA;

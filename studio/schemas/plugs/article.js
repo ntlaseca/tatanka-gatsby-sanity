@@ -4,17 +4,14 @@ export default {
   type: 'object',
   fields: [
     {
+      title: 'Title',
       name: 'title',
       type: 'string'
     },
     {
-      name: 'subtitle',
-      type: 'simpleBlockContent'
-    },
-    {
       title: 'Content',
       name: 'content',
-      type: 'bodyPortableText'
+      type: 'simpleBlockContent'
     }
   ],
   preview: {

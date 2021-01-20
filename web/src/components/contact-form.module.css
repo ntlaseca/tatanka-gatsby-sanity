@@ -1,0 +1,80 @@
+@import '../styles/media-queries.css';
+
+.root {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-gap: 3rem;
+  padding: 1.5em;
+  background-size: cover;
+  background-position: center;
+
+  @media (--media-min-large) {
+    grid-template-columns: 1fr 2fr;
+    padding: 4em;
+  }
+
+  @nest & button {
+    margin-top: 2rem;
+  }
+}
+
+.formWrapper {
+  display: grid;
+  font-family: var(--font-body-typeface);
+
+  @nest & form {
+    display: grid;
+    grid-gap: 2rem;
+
+    & .firstName {
+      grid-column: span 1;
+      grid-row: 1;
+    }
+
+    & .lastName {
+      grid-column: span 1;
+      grid-row: 1;
+    }
+
+    & .email {
+      grid-column: span 1;
+      grid-row: 2;
+    }
+
+    & .phone {
+      grid-column: span 1;
+      grid-row: 2;
+    }
+
+    & label {
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      line-height: 1;
+    }
+
+    & input {
+      box-sizing: border-box;
+      display: block;
+      width: 100%;
+      margin-top: .5rem;
+      padding: 1rem .5rem;
+      font-size: inherit;
+      border: none;
+      border-radius: .25rem;
+    }
+  }
+}
+
+.title {
+  composes: responsiveTitle2 from './typography.module.css';
+  font-family: var(--font-header-typeface);
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--color-brown);
+  margin: 0;
+
+  @media (--media-min-large) {
+    text-align: left;
+  }
+}

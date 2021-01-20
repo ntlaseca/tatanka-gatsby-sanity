@@ -25,9 +25,11 @@ export default {
         { type: 'fullpageBlock' },
         { type: 'uiComponentRef' },
         { type: 'hero' },
+        { type: 'generalArticle' },
         { type: 'infoRows' },
-        { type: 'ctaColumns' },
+        { type: 'imageGrid' },
         { type: 'ctaPlug' },
+        { type: 'contactForm' }
       ],
     },
   ],

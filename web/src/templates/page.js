@@ -1,16 +1,18 @@
-import React, { useState } from "react";
-import { graphql } from "gatsby";
+import React, { useState } from "react"
+import { graphql } from "gatsby"
 
-import Hero from "../components/hero";
-import InfoRows from "../components/info-rows";
-import CTAColumns from "../components/cta-columns";
-import CTA from "../components/cta";
-import FullpageBlock from "../components/fullpage-block";
-import { TopWave, BottomWave } from "../components/wave";
+import Hero from "../components/hero"
+import GeneralArticle from "../components/general-article"
+import InfoRows from "../components/info-rows"
+import ImageGrid from "../components/image-grid"
+import CTA from "../components/cta"
+import FullpageBlock from "../components/fullpage-block"
+import ContactForm from "../components/contact-form"
+import { TopWave, BottomWave } from "../components/wave"
 
-import GraphQLErrorList from "../components/graphql-error-list";
-import SEO from "../components/seo";
-import Layout from "../containers/layout";
+import GraphQLErrorList from "../components/graphql-error-list"
+import SEO from "../components/seo"
+import Layout from "../containers/layout"
 
 export const query = graphql`
   query PageTemplateQuery($id: String!) {
@@ -71,17 +73,23 @@ const Page = (props) => {
         case "fullpageBlock":
           el = <FullpageBlock key={c._key} {...c} />;
           break;
+        case "generalArticle":
+          el = <GeneralArticle key={c._key} {...c} />;
+          break;
         case "infoRows":
           el = <InfoRows key={c._key} {...c} />;
           break;
         case "hero":
           el = <Hero key={c._key} {...c} />;
           break;
-        case "ctaColumns":
-          el = <CTAColumns key={c._key} {...c} />;
+        case "imageGrid":
+          el = <ImageGrid key={c._key} {...c} />;
           break;
         case "ctaPlug":
           el = <CTA key={c._key} {...c} />;
+          break;
+        case "contactForm":
+          el = <ContactForm key={c._key} {...c} />;
           break;
         case "uiComponentRef":
           switch (c.name) {
