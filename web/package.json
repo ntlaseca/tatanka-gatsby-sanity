@@ -7,7 +7,7 @@
     "type": "git",
     "url": "git://github.com/ntlaseca/tatanka-gatsby-sanity.git"
   },
-  "license" : "MIT",
+  "license": "MIT",
   "engines": {
     "node": "10.x"
   },
@@ -49,8 +49,7 @@
     "react-dom": "^16.14.0",
     "react-helmet": "^5.2.1",
     "react-instagram-embed": "^2.0.0",
-    "react-player": "^1.15.2",
-    "tailwindcss": "^2.0.2"
+    "react-player": "^1.15.2"
   },
   "devDependencies": {
     "eslint": "^6.8.0",
