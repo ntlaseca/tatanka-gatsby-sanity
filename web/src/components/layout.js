@@ -63,9 +63,7 @@ class Layout extends React.Component {
               <Logo />
             </div>
             <div className={styles.social}>
-              <Facebook />
               <Instagram />
-              <Twitter />
             </div>
             <div className={styles.siteInfo}>
               Tatanka Travel © {new Date().getFullYear()}. All rights reserved.

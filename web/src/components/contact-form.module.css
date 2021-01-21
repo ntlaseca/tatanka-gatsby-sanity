@@ -25,6 +25,7 @@
 
   @nest & form {
     display: grid;
+    grid-template-columns: repeat(2, 1fr);
     grid-gap: 2rem;
 
     & .firstName {
@@ -57,11 +58,34 @@
       box-sizing: border-box;
       display: block;
       width: 100%;
-      margin-top: .5rem;
-      padding: 1rem .5rem;
+      padding: 1rem .75rem;
       font-size: inherit;
       border: none;
       border-radius: .25rem;
+      transition: all 200ms ease;
+
+      &:focus {
+        outline: none;
+        border-color: var(--color-brown);
+        box-shadow: 0 0 0 2px var(--color-brown);
+      }
+
+      &::placeholder {
+        color: var(--color-brown);
+      }
+    }
+
+    & .interests {
+      display: grid;
+      grid-template-areas: "left right";
+
+      & input[type=checkbox] {
+        grid-area: right;
+      }
+      
+      & label {
+        grid-area: left;
+      }
     }
   }
 }

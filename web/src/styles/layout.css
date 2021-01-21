@@ -16,8 +16,3 @@ body {
 html, body, body > div, body > div > div {
   height: 100%;
 }
-
-h1 {
-  overflow-wrap: break-word;
-  hyphens: auto;
-}

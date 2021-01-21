@@ -1,52 +1,57 @@
 import React from "react";
-import { getFluidGatsbyImage } from "gatsby-source-sanity"
+import { graphql } from "gatsby"
+import Img from "gatsby-image"
 
-import clientConfig from "../../client-config";
 import Container from "./container"
 import styles from "./image-grid.module.css"
 
-// const maybeImage = illustration => {
-//   let img = null
-//   if (
-//     illustration &&
-//     illustration.disabled !== true &&
-//     illustration.image &&
-//     illustration.image.asset
-//   ) {
-//     const fluidProps = getFluidGatsbyImage(
-//       illustration.image.asset._id,
-//       { maxWidth: 960 },
-//       clientConfig.sanity
-//     )
+export const imageQuery = graphql`
+  query {
+    allFile(
+      filter: {
+        relativeDirectory: { eq: "image-grid" }
+      }
+    ) {
+      edges {
+        node {
+          base
+          childImageSharp {
+            fluid(
+              maxWidth: 960
+              quality: 100
+              srcSetBreakpoints: [360, 720, 960]
+            ) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+      }
+    }
+  }
+`
 
-//     img = (
-//       <img className={styles.imageContainer} src={fluidProps.src} alt={illustration.image.alt} />
-//     );
-//   }
-//   return img
-// };
-
-const ImageGrid = props => {
-  const images = props.images.map(({image}) => {
-    return (
-      <a href="">
-        <div className={styles.imgContainer}>
-          <div className={styles.textOverlay}>
-            {image.caption}
-          </div>
-          <img src={image.asset.url} alt={image.alt} />
-        </div>
-      </a>
-    );
-  });
+const ImageGrid = data => {
+  const images = data.allFile.edges
 
   return (
     <Container>
-      <section className={styles.root}>
-        {images}
-      </section>
+      {images.map(image => (
+        <a href="">
+          <div className={styles.imgContainer}>
+            <div className={styles.textOverlay}>
+              {image.caption}
+            </div>
+              <Img
+                fluid={image.node.childImageSharp.fluid}
+                alt={image.node.base.split(".")[0]}
+              />
+          </div>
+        </a>
+      ))}
     </Container>
-  );
-};
+  )
+}
 
-export default ImageGrid;
+
+
+export default ImageGrid

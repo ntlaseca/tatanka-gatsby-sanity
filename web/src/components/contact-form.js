@@ -38,20 +38,33 @@ const ContactForm = props => {
       <div className={styles.formWrapper}>
         <form action="">
           <div className={styles.firstName}>
-            <label for="">First name</label>
-            <input type="text"></input>
+            <input type="text" name="firstName" placeholder="First name" />
           </div>
           <div className={styles.lastName}>
-            <label for="">Last name</label>
-            <input type="text"></input>
+            <input type="text" name="lastName" placeholder="Last name" />
           </div>
           <div className={styles.email}>
-            <label for="">Email address</label>
-            <input type="text"></input>
+            <input type="email" name="email" placeholder="Email address" />
           </div>
           <div className={styles.phone}>
-            <label for="">Phone</label>
-            <input type="text"></input>
+            <input type="tel" name="phone" placeholder="Phone" />
+          </div>
+          <div className={styles.departure}>
+            <label>Depart</label>
+            <input type="date" name="departDate" placeholder="From" />
+          </div>
+          <div className={styles.return}>
+            <label>Return</label>
+            <input type="date" name="returnDate" placeholder="To" />
+          </div>
+          <div className={styles.from}>
+            <input type="text" name="from" placeholder="From" />
+          </div>
+          <div className={styles.to}>
+            <input type="text" name="to" placeholder="To" />
+          </div>
+          <div className={styles.interests}>
+            <p>Interested in</p>
           </div>
         </form>
         {props.cta && props.cta.title && (

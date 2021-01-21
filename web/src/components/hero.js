@@ -1,6 +1,7 @@
 import React from 'react'
 
 import Icon from './icons'
+import Video from './video'
 import clientConfig from '../../client-config'
 
 import styles from './hero.module.css'
@@ -9,7 +10,12 @@ import { getFluidGatsbyImage } from 'gatsby-source-sanity'
 
 const maybeImage = illustration => {
   let img = null
-  if (illustration && illustration.image && illustration.image.asset && !illustration.disabled) {
+  if (
+    illustration && 
+    illustration.image && 
+    illustration.image.asset && 
+    !illustration.disabled
+  ) {
     const fluidProps = getFluidGatsbyImage(
       illustration.image.asset._id,
       { maxWidth: 2160 },

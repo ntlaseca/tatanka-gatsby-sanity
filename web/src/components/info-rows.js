@@ -7,7 +7,6 @@ import clientConfig from "../../client-config";
 import { cn } from "../lib/helpers"
 
 import { button } from './button.module.css'
-import { paragraph } from './typography.module.css'
 import styles from './info-rows.module.css'
 
 const maybeImage = illustration => {
