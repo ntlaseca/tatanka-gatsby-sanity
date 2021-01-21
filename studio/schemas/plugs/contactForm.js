@@ -34,10 +34,10 @@ export default {
           { title: "Orange", value: "#fe9431"},
           { title: "Red", value: "#e3222a" },
           { title: "Blue", value: "#232d3e" },
-          { title: "Sand", value: "#ab8762" },
+          { title: "Sand", value: "#a27d57" },
           { title: "Brown", value: "#360a03" },
           { title: "Black", value: "#222222" },
-          { title: "White", value: "white" }
+          { title: "White", value: "#dbdbcf" }
         ]
       }
     },
