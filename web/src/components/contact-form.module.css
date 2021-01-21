@@ -4,14 +4,14 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto;
-  grid-gap: 3rem;
-  padding: 1.5em;
+  grid-gap: 3em;
+  padding: 1.5rem;
   background-size: cover;
   background-position: center;
 
   @media (--media-min-large) {
     grid-template-columns: 1fr 2fr;
-    padding: 4em;
+    padding: 4rem;
   }
 
   @nest & button {
@@ -52,13 +52,18 @@
       text-transform: uppercase;
       letter-spacing: .1em;
       line-height: 1;
+
+      & + input {
+        margin-top: .5rem;
+      }
     }
 
     & input {
       box-sizing: border-box;
       display: block;
       width: 100%;
-      padding: 1rem .75rem;
+      padding: 1em .75em;
+      font-family: var(--font-body-typeface);
       font-size: inherit;
       border: none;
       border-radius: .25rem;
