@@ -1,57 +1,47 @@
+import { Link } from "gatsby";
 import React from "react";
-import { graphql } from "gatsby"
-import Img from "gatsby-image"
-
+import { buildImageObj } from '../lib/helpers'
+import { imageUrlFor } from '../lib/image-url'
 import Container from "./container"
+
 import styles from "./image-grid.module.css"
 
-export const imageQuery = graphql`
-  query {
-    allFile(
-      filter: {
-        relativeDirectory: { eq: "image-grid" }
-      }
-    ) {
-      edges {
-        node {
-          base
-          childImageSharp {
-            fluid(
-              maxWidth: 960
-              quality: 100
-              srcSetBreakpoints: [360, 720, 960]
-            ) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-      }
-    }
-  }
-`
+function ProfileCard ({ image, categoryLink }) {
+  return (
+    <Link to={categoryLink}>
+      <div className={styles.imgContainer}>
+        <div className={styles.textOverlay}>
+          {image.caption}
+        </div>
+        {image && image.asset && (
+          <img
+            src={imageUrlFor(buildImageObj(image))
+              .width(720)
+              .height(720)
+              .fit('crop')
+              .url()}
+          />
+        )}
+      </div>
+    </Link>
+  )
+}
 
-const ImageGrid = data => {
-  const images = data.allFile.edges
-
+function ImageGrid ({ images }) {
   return (
     <Container>
-      {images.map(image => (
-        <a href="">
-          <div className={styles.imgContainer}>
-            <div className={styles.textOverlay}>
-              {image.caption}
-            </div>
-              <Img
-                fluid={image.node.childImageSharp.fluid}
-                alt={image.node.base.split(".")[0]}
-              />
-          </div>
-        </a>
-      ))}
+      <div className={styles.root}>
+        {images.map(image => (
+            <ProfileCard {...image} />
+        ))}
+      </div>
     </Container>
   )
 }
 
-
+ProfileCard.defaultProps = {
+  caption: '',
+  categoryLink: ''
+}
 
 export default ImageGrid

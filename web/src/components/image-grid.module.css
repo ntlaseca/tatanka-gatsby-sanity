@@ -46,6 +46,18 @@
    font-size: 1.5rem;   
   }
 
+  @nest & .textOverlay {
+    position: absolute;
+    display: inline;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    opacity: 0;
+    letter-spacing: .1rem;
+    transition: all 300ms ease;
+  }
+
   @nest & img {
     position: absolute;
     top: 0;
@@ -56,16 +68,5 @@
     width: 100%;
     height: 100%;
     border-radius: .25em;
-  }
-
-  @nest & .textOverlay {
-    position: absolute;
-    display: inline;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
-    opacity: 0;
-    transition: all 300ms ease;
   }
 }
