@@ -6,21 +6,9 @@
   grid-gap: 2em;
   grid-template-rows: auto;
 
-  @nest & a {
-
-    @nest & img {
-      filter: brightness(1);
-      transition: all ease 300ms;
-    }
-
-    @nest &:hover{
-      @nest & img {
-        filter: brightness(.2);
-      }
-      @nest & .textOverlay {
-        opacity: 1;
-      }
-    }
+  @nest & img {
+    filter: brightness(1);
+    transition: all ease 300ms;
   }
 
   @media (--media-min-medium) {
@@ -36,26 +24,43 @@
   display: block;
   position: relative;
   padding-top: 100%;
-  text-align: center;
-  font-family: var(--font-header-typeface);
-  font-size: 1rem;
-  color: var(--color-yellow);
   transition: all ease 300ms;
 
-  @media (--media-min-medium) {
-   font-size: 1.5rem;   
+  @nest &:hover{
+
+    @nest & img {
+      filter: brightness(.2);
+    }
+
+    @nest & .textOverlay {
+      opacity: 1;
+    }
   }
 
   @nest & .textOverlay {
     position: absolute;
     display: inline;
+    cursor: default;
+    user-select: none;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 2;
     opacity: 0;
+    font-family: var(--font-header-typeface);
+    font-size: 5vw;
+    color: var(--color-yellow);
     letter-spacing: .1rem;
+    text-align: center;
     transition: all 300ms ease;
+
+    @media (--media-min-medium) {
+      font-size: 2.5vw;   
+    }
+
+    @media (--media-min-large) {
+      font-size: 2vw;
+    }
   }
 
   @nest & img {

@@ -1,4 +1,3 @@
-import { Link } from "gatsby";
 import React from "react";
 import { buildImageObj } from '../lib/helpers'
 import { imageUrlFor } from '../lib/image-url'
@@ -8,22 +7,20 @@ import styles from "./image-grid.module.css"
 
 function ProfileCard ({ image, categoryLink }) {
   return (
-    <Link to={categoryLink}>
-      <div className={styles.imgContainer}>
-        <div className={styles.textOverlay}>
-          {image.caption}
-        </div>
-        {image && image.asset && (
-          <img
-            src={imageUrlFor(buildImageObj(image))
-              .width(720)
-              .height(720)
-              .fit('crop')
-              .url()}
-          />
-        )}
+    <div className={styles.imgContainer}>
+      <div className={styles.textOverlay}>
+        {image.caption}
       </div>
-    </Link>
+      {image && image.asset && (
+        <img
+          src={imageUrlFor(buildImageObj(image))
+            .width(720)
+            .height(720)
+            .fit('crop')
+            .url()}
+        />
+      )}
+    </div>
   )
 }
 
@@ -32,7 +29,7 @@ function ImageGrid ({ images }) {
     <Container>
       <div className={styles.root}>
         {images.map(image => (
-            <ProfileCard {...image} />
+          <ProfileCard {...image} />
         ))}
       </div>
     </Container>
