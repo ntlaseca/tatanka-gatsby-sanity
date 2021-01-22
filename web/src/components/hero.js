@@ -35,7 +35,7 @@ function Hero(props) {
       {props.video && props.video.asset && (
         <div>
           <video autoplay="autoplay" loop>
-            <source src={BisonWebm} type="video/webm"
+            <source src={BisonWebm} type="video/webm" />
             <source src={BisonMp4} type="video/mp4" />
           </video>
         </div>
