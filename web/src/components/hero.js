@@ -1,7 +1,8 @@
 import React from 'react'
 import { getFluidGatsbyImage } from 'gatsby-source-sanity'
 import Icon from './icons'
-import BisonVideo from '../videos/bison_crf22.mp4'
+import BisonMp4 from '../videos/bison.mp4'
+import BisonWebm from '../videos/bison.webm'
 import clientConfig from '../../client-config'
 
 import styles from './hero.module.css'
@@ -34,7 +35,8 @@ function Hero(props) {
       {props.video && props.video.asset && (
         <div>
           <video autoplay="autoplay" loop>
-            <source src={BisonVideo} type="video/mp4" />
+            <source src={BisonWebm} type="video/webm"
+            <source src={BisonMp4} type="video/mp4" />
           </video>
         </div>
       )}
