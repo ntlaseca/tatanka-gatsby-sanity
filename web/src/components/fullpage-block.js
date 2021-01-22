@@ -29,12 +29,13 @@ const maybeImage = illustration => {
 
 const FullpageBlock = props => {
   const img = maybeImage(props.illustration)
+  const { _rawBody, cta, header, title } = props
   return (
     <section className={styles.root} style={{backgroundImage: `url(${img})`, backgroundColor: `${props.colors.value}`}}>
       <div className={styles.textBox}>
-        <h1 className={styles.title}>{props.header}</h1>
-        <PortableText blocks={props.text} />
-        {props.cta && props.cta.title && (
+        <h1 className={styles.title}>{header}</h1>
+        {_rawBody && <BlockContent blocks={_rawBody || []} />}
+        {cta && cta.title && (
           <CTALink
             {...props.cta}
             buttonActionClass={button}

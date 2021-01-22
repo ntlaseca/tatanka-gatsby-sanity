@@ -13,7 +13,7 @@ export default {
     },
     {
       name: 'text',
-      type: 'simpleBlockContent'
+      type: 'bodyPortableText'
     },
     {
       name: 'illustration',
