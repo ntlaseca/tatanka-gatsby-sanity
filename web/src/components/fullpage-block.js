@@ -18,7 +18,7 @@ const maybeImage = illustration => {
   ) {
     const fluidProps = getFluidGatsbyImage(
       illustration.image.asset._id,
-      { maxWidth: 2160 },
+      { maxWidth: 1920 },
       clientConfig.sanity
     )
     
