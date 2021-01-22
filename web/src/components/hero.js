@@ -1,12 +1,10 @@
 import React from 'react'
-
+import { getFluidGatsbyImage } from 'gatsby-source-sanity'
 import Icon from './icons'
-import Video from './video'
+import BisonVideo from '../videos/bison_crf22.mp4'
 import clientConfig from '../../client-config'
 
 import styles from './hero.module.css'
-
-import { getFluidGatsbyImage } from 'gatsby-source-sanity'
 
 const maybeImage = illustration => {
   let img = null
@@ -18,7 +16,7 @@ const maybeImage = illustration => {
   ) {
     const fluidProps = getFluidGatsbyImage(
       illustration.image.asset._id,
-      { maxWidth: 2160 },
+      { maxWidth: 1920 },
       clientConfig.sanity
     )
 
@@ -27,11 +25,19 @@ const maybeImage = illustration => {
   return img
 };
 
+const isMain = location.pathname === 'frontpage'
 
 function Hero(props) {
   const img = maybeImage(props.illustration)
   return (
     <section className={styles.root} style={{backgroundImage: `url(${img})`}}>
+      {props.video && props.video.asset && (
+        <div>
+          <video autoplay="autoplay" loop>
+            <source src={BisonVideo} type="video/mp4" />
+          </video>
+        </div>
+      )}
       <Icon symbol="logo" />
     </section>
   )
