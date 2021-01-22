@@ -32,13 +32,14 @@ import variation from './objects/variation'
 import openGraph from './objects/openGraph'
 import latex from './latex'
 import slideshow from './objects/slideshow'
+import video from './objects/video'
 
 const allPlugs = Object.values(plugs).map((plug) => {
   return { ...plug, fields: plugDefaultFields.concat(plug.fields) }
 })
 
 export default createSchema({
-  name: 'blog',
+  name: 'site',
   types: schemaTypes // Built-in types
     // Our custom types
     .concat([
@@ -63,7 +64,8 @@ export default createSchema({
       videoEmbed,
       bodyPortableText,
       excerptPortableText,
-      slideshow
+      slideshow,
+      video
     ])
     .concat(allPlugs),
 })
