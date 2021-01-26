@@ -2,7 +2,7 @@
 
 .root {
   display: grid;
-  grid-template-columns: repeat(1fr);
+  grid-template-columns: 1fr;
   grid-gap: 2em;
   grid-template-rows: auto;
 
@@ -13,6 +13,7 @@
 
   @media (--media-min-medium) {
     grid-template-columns: repeat(2, 1fr);
+    grid-gap: 4em;
   }
 
   @media (--media-min-large) {

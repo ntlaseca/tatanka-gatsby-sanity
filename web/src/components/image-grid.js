@@ -29,7 +29,7 @@ function ImageGrid ({ images }) {
     <Container>
       <div className={styles.root}>
         {images.map(image => (
-          <ProfileCard {...image} />
+          <ProfileCard {...image} key={image._key} />
         ))}
       </div>
     </Container>
