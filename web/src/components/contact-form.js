@@ -58,7 +58,7 @@ const ContactForm = props => {
     <section className={styles.root} style={{ backgroundColor: `${props.colors.value}` }}>
       <div>
         <h2 className={styles.title}>{props.header}</h2>
-        <BlockContent blocks={props.body} />
+        {props.body && <BlockContent blocks={props.body} />}
       </div>
       <div className={styles.formWrapper}>
         <form
@@ -70,7 +70,7 @@ const ContactForm = props => {
             <input
               className={styles.textInput}
               type="text"
-              name="firstName"
+              name="First name"
               placeholder="First name"
               required="required"
             />
@@ -79,7 +79,7 @@ const ContactForm = props => {
             <input
               className={styles.textInput}
               type="text"
-              name="lastName"
+              name="Last name"
               placeholder="Last name"
               required="required"
             />
@@ -88,8 +88,8 @@ const ContactForm = props => {
             <input
               className={styles.textInput}
               type="email"
-              name="email"
-              placeholder="Email address"
+              name="Email"
+              placeholder="Email"
               required="required"
             />
           </div>
@@ -101,7 +101,7 @@ const ContactForm = props => {
             <input
               className={styles.textInput}
               type="date"
-              name="departDate"
+              name="Depart date"
               placeholder="depart"
               required="required"
             />
@@ -111,16 +111,16 @@ const ContactForm = props => {
             <input
               className={styles.textInput}
               type="date"
-              name="returnDate"
+              name="Return date"
               placeholder="return"
               required="required"
             />
           </div>
           <div className={styles.from}>
-            <input className={styles.textInput} type="text" name="from" placeholder="From" />
+            <input className={styles.textInput} type="text" name="From" placeholder="From" />
           </div>
           <div className={styles.to}>
-            <input className={styles.textInput} type="text" name="to" placeholder="To" />
+            <input className={styles.textInput} type="text" name="To" placeholder="To" />
           </div>
           <div className={styles.interests}>
             <label>Interests</label>
@@ -152,7 +152,7 @@ const ContactForm = props => {
           <div className={styles.message}>
             <textarea
               className="messageText"
-              name="messageText"
+              name="Message"
               rows="4"
               placeholder="Additional travel information"
             />
