@@ -25,6 +25,7 @@ import { instagram, videoEmbed } from './objects/embeds'
 import cta from './objects/cta'
 import bodyPortableText from './objects/bodyPortableText'
 import excerptPortableText from './objects/excerptPortableText'
+import blockContent from './objects/blockContent'
 import mainImage from './objects/mainImage'
 import authorReference from './objects/authorReference'
 import link from './objects/link'
@@ -32,7 +33,6 @@ import variation from './objects/variation'
 import openGraph from './objects/openGraph'
 import latex from './latex'
 import slideshow from './objects/slideshow'
-import video from './objects/video'
 
 const allPlugs = Object.values(plugs).map((plug) => {
   return { ...plug, fields: plugDefaultFields.concat(plug.fields) }
@@ -64,8 +64,8 @@ export default createSchema({
       videoEmbed,
       bodyPortableText,
       excerptPortableText,
+      blockContent,
       slideshow,
-      video
     ])
     .concat(allPlugs),
 })

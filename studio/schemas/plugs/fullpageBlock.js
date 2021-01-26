@@ -12,8 +12,12 @@ export default {
       type: 'string'
     },
     {
-      name: 'text',
-      type: 'bodyPortableText'
+      name: 'body',
+      type: 'blockContent'
+    },
+    {
+      name: 'image',
+      type: 'mainImage'
     },
     {
       name: 'illustration',
