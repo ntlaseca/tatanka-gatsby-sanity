@@ -12,8 +12,8 @@ export default {
       type: 'string'
     },
     {
-      name: 'text',
-      type: 'simpleBlockContent'
+      name: 'body',
+      type: 'blockContent'
     },
     {
       name: 'illustration',
