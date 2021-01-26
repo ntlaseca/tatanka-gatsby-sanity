@@ -8,9 +8,9 @@ export { default as uiComponentRef } from './uiComponent'
 export { default as fullpageBlock } from './fullpageBlock'
 export { default as contactForm } from './contactForm'
 export { default as generalArticle } from './article'
-export { default as videoPlug } from './videoPlug'
 
 /*
+export { default as videoPlug } from './videoPlug'
 export { default as pricing } from './pricing'
 export { default as cta } from './cta'
 export {default as customPlug} from './customPlug'
