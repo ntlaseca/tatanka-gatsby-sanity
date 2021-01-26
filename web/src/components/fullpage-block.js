@@ -1,7 +1,8 @@
 import React from 'react'
 import { getFluidGatsbyImage } from 'gatsby-source-sanity';
-
-import PortableText from './portableText';
+import { buildImageObj } from '../lib/helpers'
+import { imageUrlFor } from '../lib/image-url'
+import BlockContent from './block-content';
 import CTALink from "./CTALink";
 import clientConfig from '../../client-config';
 
@@ -29,12 +30,23 @@ const maybeImage = illustration => {
 
 const FullpageBlock = props => {
   const img = maybeImage(props.illustration)
-  const { _rawBody, cta, header, title } = props
+  const { body, colors, cta, header, image } = props
   return (
-    <section className={styles.root} style={{backgroundImage: `url(${img})`, backgroundColor: `${props.colors.value}`}}>
+    <section className={styles.root} style={{backgroundImage: `url(${img})`, backgroundColor: `${colors.value}`}}>
       <div className={styles.textBox}>
-        <h1 className={styles.title}>{header}</h1>
-        {_rawBody && <BlockContent blocks={_rawBody || []} />}
+        {header && <h1 className={styles.title}>{header}</h1>}
+        {body && <BlockContent blocks={body} />}
+        {image && image.asset && (
+          <div className={styles.mainImage}>
+            <img
+              src={imageUrlFor(buildImageObj(image))
+                .maxWidth(1200)
+                .fit('crop')
+                .url()}
+              alt={image.alt}
+            />
+          </div>
+        )}
         {cta && cta.title && (
           <CTALink
             {...props.cta}
