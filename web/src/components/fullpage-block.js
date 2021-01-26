@@ -33,9 +33,10 @@ const FullpageBlock = props => {
   const { body, colors, cta, header, image } = props
   return (
     <section className={styles.root} style={{backgroundImage: `url(${img})`, backgroundColor: `${colors.value}`}}>
-      <div className={styles.textBox}>
+      <div className={styles.wrapper}>
         {header && <h1 className={styles.title}>{header}</h1>}
         {body && <BlockContent blocks={body} />}
+      
         {image && image.asset && (
           <div className={styles.mainImage}>
             <img
