@@ -1,6 +1,7 @@
 import React from 'react'
 import { getFluidGatsbyImage } from 'gatsby-source-sanity'
 import Icon from './icons'
+import ReactPlayer from "react-player"
 import BisonMp4 from '../videos/bison.mp4'
 import BisonWebm from '../videos/bison.webm'
 import clientConfig from '../../client-config'
@@ -34,10 +35,16 @@ function Hero(props) {
     <section className={styles.root} style={{backgroundImage: `url(${img})`}}>
       {props.video && props.video.asset && (
         <div>
-          <video autoplay="autoplay" loop>
-            <source src={BisonWebm} type="video/webm" />
-            <source src={BisonMp4} type="video/mp4" />
-          </video>
+          <ReactPlayer
+            playing
+            loop
+            width="auto"
+            height="auto"
+            url={[
+              {src: BisonWebm, type: "video/webm"},
+              {src: BisonMp4, type: "video/mp4"}
+            ]}
+          />
         </div>
       )}
       <Icon symbol="logo" />
