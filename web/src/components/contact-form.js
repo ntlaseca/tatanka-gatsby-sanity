@@ -95,21 +95,23 @@ const ContactForm = props => {
           </div>
           <div className={styles.interests}>
             <label>Interests</label>
-            <div className={styles.formCheck}>
-              <input className={styles.checkInput} type="checkbox" value="" name="interest1" />
-              <label type="text">Private aviation</label>
-            </div>
-            <div className={styles.formCheck}>
-              <input className={styles.checkInput} type="checkbox" value="" name="interest2" />
-              <label type="text">Hotel stay</label>
-            </div>
-            <div className={styles.formCheck}>
-              <input className={styles.checkInput} type="checkbox" value="" name="interest3" />
-              <label type="text">Private house stay</label>
+            <div className={styles.formGroup}>
+              <div className={styles.formCheck}>
+                <input className={styles.checkInput} type="checkbox" value="" name="Private aviation" />
+                <label type="text">Private aviation</label>
+              </div>
+              <div className={styles.formCheck}>
+                <input className={styles.checkInput} type="checkbox" value="" name="Hotel stay" />
+                <label type="text">Hotel stay</label>
+              </div>
+              <div className={styles.formCheck}>
+                <input className={styles.checkInput} type="checkbox" value="" name="Private house stay" />
+                <label type="text">Private house stay</label>
+              </div>
             </div>
           </div>
           <div className={styles.message}>
-            <textarea class="messageText" name="messageText" rows="4" placeholder="Additional travel information" />
+            <textarea className="messageText" name="messageText" rows="4" placeholder="Additional travel information" />
           </div>
           <button className={button} type="submit">Submit</button>
           {serverState.status && (
