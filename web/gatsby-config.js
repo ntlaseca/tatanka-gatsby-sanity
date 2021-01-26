@@ -1,12 +1,7 @@
-require('dotenv').config({
-  path: `.env.${process.env.NODE_ENV || "development"}`
-})
+require('dotenv').config()
 
 const path = require('path')
-
-const {
-  api: { projectId, dataset }
-} = requireConfig('../studio/sanity.json')
+const clientConfig = require("./client-config");
 
 module.exports = {
   plugins: [
@@ -31,8 +26,7 @@ module.exports = {
     {
       resolve: 'gatsby-source-sanity',
       options: {
-        projectId,
-        dataset,
+        ...clientConfig.sanity,
         // To enable preview of drafts, copy .env-example into .env,
         // and add a token with read permissions
         token: process.env.SANITY_TOKEN,
@@ -41,27 +35,4 @@ module.exports = {
       }
     }
   ]
-}
-
-/**
- * We're requiring a file in the studio folder to make the monorepo
- * work "out-of-the-box". Sometimes you would to run this web frontend
- * in isolation (e.g. on codesandbox). This will give you an error message
- * with directions to enter the info manually or in the environment.
- */
-
-function requireConfig (path) {
-  try {
-    return require(path)
-  } catch (e) {
-    console.error(
-      'Failed to require sanity.json. Fill in projectId and dataset name manually in gatsby-config.js'
-    )
-    return {
-      api: {
-        projectId: process.env.SANITY_PROJECT_ID || '',
-        dataset: process.env.SANITY_DATASET || ''
-      }
-    }
-  }
 }
