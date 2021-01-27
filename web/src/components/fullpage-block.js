@@ -1,4 +1,5 @@
 import React from 'react'
+import Img from 'gatsby-image'
 import { getFluidGatsbyImage } from 'gatsby-source-sanity'
 import { buildImageObj } from '../lib/helpers'
 import { imageUrlFor } from '../lib/image-url'
@@ -9,7 +10,7 @@ import clientConfig from '../../client-config'
 import { button } from './button.module.css'
 import styles from './fullpage-block.module.css'
 
-const maybeImage = illustration => {
+const bgImage = illustration => {
   let img = null
   if (illustration && illustration.image && illustration.image.asset && !illustration.disabled) {
     const fluidProps = getFluidGatsbyImage(
@@ -24,7 +25,7 @@ const maybeImage = illustration => {
 }
 
 const FullpageBlock = props => {
-  const img = maybeImage(props.illustration)
+  const img = bgImage(props.illustration)
   const { body, colors, cta, header, image } = props
   return (
     <section
@@ -34,15 +35,12 @@ const FullpageBlock = props => {
       <div className={styles.wrapper}>
         {header && <h1 className={styles.title}>{header}</h1>}
         {body && <BlockContent blocks={body} />}
-
         {image && image.asset && (
           <div className={styles.mainImage}>
-            <img
-              src={imageUrlFor(buildImageObj(image))
-                .maxWidth(1200)
-                .fit('crop')
-                .url()}
+            <Img
+              fluid={getFluidGatsbyImage(image.asset._id, { maxWidth: 1440 }, clientConfig.sanity)}
               alt={image.alt}
+              loading='lazy'
             />
           </div>
         )}
