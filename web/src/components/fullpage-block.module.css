@@ -10,12 +10,12 @@
 }
 
 .wrapper {
-  padding-left: 4rem;
-  padding-right: 4rem;
+  padding: 4rem;
+  width: 100%;
+  height: auto;
 
   @media (--media-min-medium) {
-    padding-left: 8rem;
-    padding-right: 8rem;
+    padding: 8rem;
   }
 
   & a {
