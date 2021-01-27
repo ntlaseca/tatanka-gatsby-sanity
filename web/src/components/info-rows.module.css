@@ -19,7 +19,7 @@
 .mainImage {
   grid-column: auto;
   grid-row: auto;
-  background-position: center bottom;
+  background-position: center;
   background-size: cover;
   
   @media (--media-min-large) {
