@@ -25,6 +25,7 @@ import { instagram, videoEmbed } from './objects/embeds'
 import cta from './objects/cta'
 import bodyPortableText from './objects/bodyPortableText'
 import excerptPortableText from './objects/excerptPortableText'
+import blockContent from './objects/blockContent'
 import mainImage from './objects/mainImage'
 import authorReference from './objects/authorReference'
 import link from './objects/link'
@@ -38,7 +39,7 @@ const allPlugs = Object.values(plugs).map((plug) => {
 })
 
 export default createSchema({
-  name: 'blog',
+  name: 'site',
   types: schemaTypes // Built-in types
     // Our custom types
     .concat([
@@ -63,7 +64,8 @@ export default createSchema({
       videoEmbed,
       bodyPortableText,
       excerptPortableText,
-      slideshow
+      blockContent,
+      slideshow,
     ])
     .concat(allPlugs),
 })

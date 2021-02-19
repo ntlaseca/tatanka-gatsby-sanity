@@ -14,8 +14,8 @@ const HamburgerIcon = () => (
     <path
       d='M1 1h8M1 4h 8M1 7h8' 
       stroke='#fad74b' 
-      stroke-width='3'
-      stroke-linecap='round'
+      strokeWidth='3'
+      strokeLinecap='round'
       style={strokeStyle}
     />
   </svg>

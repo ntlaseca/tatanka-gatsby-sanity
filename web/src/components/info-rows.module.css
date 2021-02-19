@@ -19,7 +19,7 @@
 .mainImage {
   grid-column: auto;
   grid-row: auto;
-  background-position: center bottom;
+  background-position: center;
   background-size: cover;
   
   @media (--media-min-large) {
@@ -39,6 +39,7 @@
   padding: 2em;
   font-family: var(--font-body-typeface);
   color: var(--color-white);
+  background-image: url('../images/asfalt-light.png');
 
   @media (--media-min-large) {
     grid-column: span 3;
@@ -64,16 +65,8 @@
   }
 }
 
-.fillBrown {
-  background-color: var(--color-brown);
-}
-
-.fillSand {
-  background-color: var(--color-sand);
-}
-
 .texturize {
-  background-image: url('../images/asfalt-light.png');
+  
 }
 
 .publishedAt {

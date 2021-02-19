@@ -1,10 +1,9 @@
-import React from "react";
-import Figure from "./Figure";
-import MainImage from "./MainImage";
-import ReactPlayer from "react-player";
-import InstagramEmbed from "react-instagram-embed";
+import BaseBlockContent from '@sanity/block-content-to-react'
+import React from 'react'
+import Figure from './figure'
+import Slideshow from './slideshow'
 
-import typography from "./typography.module.css";
+import typography from '../typography.module.css'
 
 const serializers = {
   types: {
@@ -29,13 +28,15 @@ const serializers = {
           return <p className={typography.paragraph}>{props.children}</p>
       }
     },
-    mainImage: ({ node }) => <MainImage mainImage={node} />,
-    videoEmbed: ({ node }) => <ReactPlayer url={node.url} controls />,
-    instagram: ({ node }) => {
-      if (!node.url) return null;
-      return <InstagramEmbed url={node.url} className="container mx-auto mt-6 mb-6" />;
+    figure (props) {
+      return <Figure {...props.node} />
     },
-  },
-};
+    slideshow (props) {
+      return <Slideshow {...props.node} />
+    }
+  }
+}
 
-export default serializers;
+const BlockContent = ({ blocks }) => <BaseBlockContent blocks={blocks} serializers={serializers} />
+
+export default BlockContent

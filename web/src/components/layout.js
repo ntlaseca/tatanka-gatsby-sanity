@@ -2,9 +2,7 @@ import React from "react";
 
 import Header from "./header";
 import Logo from './icons/logo'
-import Facebook from './icons/facebook'
 import Instagram from './icons/instagram'
-import Twitter from './icons/twitter'
 
 import '../styles/layout.css'
 import styles from './layout.module.css'

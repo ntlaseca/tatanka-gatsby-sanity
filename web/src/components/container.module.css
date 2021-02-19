@@ -3,5 +3,9 @@
 .root {
   box-sizing: border-box;
   margin: 0 auto;
-  padding: 4rem;
+  padding: 2rem;
+
+  @media (--media-min-medium) {
+    padding: 4rem;
+  }
 }
