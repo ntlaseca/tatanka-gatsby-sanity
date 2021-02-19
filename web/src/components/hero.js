@@ -27,8 +27,6 @@ const maybeImage = illustration => {
   return img
 }
 
-const isMain = location.pathname === 'frontpage'
-
 function Hero(props) {
   const img = maybeImage(props.illustration)
   return (
