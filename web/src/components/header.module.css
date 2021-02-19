@@ -1,5 +1,4 @@
 @import '../styles/media-queries.css';
-@import '../styles/vars.css';
 
 .root {
   position: fixed;
@@ -40,7 +39,7 @@
   }
 
   @nest & svg {
-    height: 2rem;
+    height: 3rem;
 
     @media (--media-min-medium) {
       height: 4rem;
@@ -79,6 +78,11 @@
     color: inherit;
     font-weight: bold;
     text-decoration: none;
+    transition: all 200ms ease;
+
+    &:hover {
+      color: var(--color-orange);
+    }
   }
 
   @media (hover: hover) {
@@ -88,11 +92,11 @@
 
   @media (--media-max-small) {
     position: absolute;
-    background: #fff;
+    background: var(--color-white);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
     left: 0;
     right: 0;
-    top: 4rem;
+    top: 6rem;
 
     @nest & ul {
       padding: 1rem 0;

@@ -1,0 +1,118 @@
+@import '../styles/media-queries.css';
+
+.root {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+
+  @media (--media-min-large) {
+    grid-template-columns: repeat(5,1fr);
+  }
+}
+
+.title {
+  composes: responsiveTitle1 from './typography.module.css';
+  font-family: var(--font-header-typeface);
+  letter-spacing: .2rem;
+}
+
+.mainImage {
+  grid-column: auto;
+  grid-row: auto;
+  background-position: center;
+  background-size: cover;
+  
+  @media (--media-min-large) {
+    grid-column: span 2;
+  }
+
+  @nest & img {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    object-fit: cover;
+  }
+}
+
+.mainContent {
+  grid-column: auto;
+  padding: 2em;
+  font-family: var(--font-body-typeface);
+  color: var(--color-white);
+  background-image: url('../images/asfalt-light.png');
+
+  @media (--media-min-large) {
+    grid-column: span 3;
+    padding: 4em;
+  }
+
+  @media (--media-min-medium) {
+    
+  }
+
+  @nest & h1 {
+    text-transform: uppercase;
+  }
+
+  @nest & a {
+    color: var(--color-yellow);
+
+    @media (hover: hover) {
+      @nest &:hover {
+        color: inherit;
+      }
+    }
+  }
+}
+
+.texturize {
+  
+}
+
+.publishedAt {
+  composes: small from './typography.module.css';
+  margin: 1.5rem 0 3rem;
+}
+
+.categories {
+  border-top: 1px solid var(--color-black);
+  margin: 2rem 0 3rem;
+
+  @nest & ul {
+    list-style: none;
+    margin: 0.75rem 0;
+    padding: 0;
+  }
+
+  @nest & ul li {
+    padding: 0.25rem 0;
+  }
+}
+
+.categoriesHeadline {
+  composes: base from './typography.module.css';
+  margin: 0.5rem 0 0;
+}
+
+.relatedProjects {
+  border-top: 1px solid var(--color-black);
+  margin: 2rem 0 3rem;
+
+  @nest & ul {
+    list-style: none;
+    margin: 0.75rem 0;
+    padding: 0;
+  }
+
+  @nest & a {
+    display: inline-block;
+    color: inherit;
+    text-decoration: none;
+    padding: 0.25rem 0;
+  }
+}
+
+.relatedProjectsHeadline {
+  composes: base from './typography.module.css';
+  margin: 0.5rem 0 0;
+}

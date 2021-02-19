@@ -1,0 +1,11 @@
+@import '../styles/media-queries.css';
+
+.root {
+  color: var(--color-white);
+}
+
+.title1 {
+  composes: responsiveTitle1 from './typography.module.css';
+  font-family: var(--font-header-typeface);
+  text-transform: uppercase;
+}

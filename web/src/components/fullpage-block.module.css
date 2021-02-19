@@ -1,0 +1,40 @@
+@import '../styles/media-queries.css';
+
+.root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-position: center;
+  background-size: cover;
+}
+
+.wrapper {
+  padding: 4rem;
+  width: 100%;
+  height: auto;
+
+  @media (--media-min-medium) {
+    padding: 8rem;
+  }
+
+  & a {
+    filter: brightness(100%) drop-shadow(0 0.25rem 0.25rem rgba(0,0,0,.2));
+  }
+}
+
+.mainImage {
+  width: 100%;
+
+  & img {
+    width: 100%;
+  }
+}
+
+.title {
+  composes: responsiveTitle1 from './typography.module.css';
+  font-family: var(--font-header-typeface);
+  letter-spacing: .2rem;
+  color: var(--color-yellow);
+  filter: drop-shadow(0 0.25rem 0.25rem rgba(0,0,0,.6));
+}
