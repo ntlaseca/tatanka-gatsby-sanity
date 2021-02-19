@@ -6,7 +6,7 @@
   },
   "project": {
     "name": "Tatanka",
-    "basePath": "/"
+    "basePath": "/studio"
   },
   "plugins": [
     "@sanity/base",
