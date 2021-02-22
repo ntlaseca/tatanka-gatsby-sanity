@@ -1,6 +1,7 @@
 export { default as hero } from './hero'
 export { default as infoRows } from './infoRows'
 export { default as textWithIllustration } from './textWithIllustration'
+export { default as richTextWithIllustration } from './richTextWithIllustration'
 export { default as illustration } from './illustration'
 export { default as imageGrid } from './imageGrid'
 export { default as ctaPlug } from './ctaPlug'
