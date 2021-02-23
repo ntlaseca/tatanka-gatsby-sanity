@@ -28,6 +28,7 @@ export default {
         { type: 'generalArticle' },
         { type: 'infoRows' },
         { type: 'imageGrid' },
+        { type: 'featureTabs' },
         { type: 'ctaPlug' },
         { type: 'contactForm' }
       ],
