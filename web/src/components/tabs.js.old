@@ -1,0 +1,60 @@
+import React from 'react'
+import PropTypes from 'prop-types'
+import Tab from './tab'
+import PortableText from './portableText'
+
+import styles from './tabs.module.css'
+
+class Tabs extends React.Component {
+
+  static propTypes = {
+    children: PropTypes.instanceOf(Array).isRequired,
+  }
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      activeTab: this.props.features[0]
+    }
+  }
+
+  onClickTabItem = (tab) => {
+    this.setState({ activeTab: tab });
+  }
+
+  render() {
+    const {
+      onClickTabItem,
+      props: { features },
+      state: { activeTab }
+    } = this;
+
+    return (
+      <div className={styles.root}>
+        <ul className={styles.tabList}>
+          {features.map((tab) => {
+            const { title } = tab.title;
+
+            return(
+              <Tab
+                activeTab={activeTab}
+                key={title}
+                title={title}
+                onClick={onClickTabItem}
+              />
+            )
+          })}
+        </ul>
+        <div className="tabContent">
+          {features.map((tab) => {
+            if (tab.title !== activeTab) return undefined;
+            return tab.features;
+          })}
+          <PortableText blocks={features.text} />
+        </div>      
+      </div>
+    );
+  }
+}
+
+export default Tabs;
