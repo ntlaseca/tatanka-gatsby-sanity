@@ -1,30 +1,42 @@
-import React from 'react'
-import { cn, buildImageObj } from '../lib/helpers'
-import { imageUrlFor } from '../lib/image-url'
-import BlockContent from './block-content'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
-function Tab (props) {
-  return (
-    <>
-      <div>
-        {props.illustration && props.illustration.image && (
-          <img
-            src={imageUrlFor(buildImageObj(props.illustration))
-              .width(600)
-              .height(Math.floor((9 / 16) * 600))
-              .url()}
-            alt={props.illustration.image.alt}
-          />
-        )}
-      </div>
-      <h3>{props.title}</h3>
-      {props.text && (
-        <div>
-          <BlockContent blocks={props.text} />
-        </div>
-      )}
-    </>
-  )
+class Tab extends Component {
+  static propTypes = {
+    activeTab: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    onClick: PropTypes.func.isRequired,
+  };
+
+  onClick = () => {
+    const { title, onClick } = this.props;
+    onClick(title);
+  }
+
+  render() {
+    const {
+      onClick,
+      props: {
+        activeTab,
+        title,
+      },
+    } = this;
+
+    let className = 'tab-list-item';
+
+    if (activeTab === title) {
+      className += ' tab-list-active';
+    }
+
+    return (
+      <li
+        className={className}
+        onClick={onClick}
+      >
+        {title}
+      </li>
+    );
+  }
 }
 
 export default Tab;
