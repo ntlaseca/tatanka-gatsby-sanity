@@ -43,7 +43,17 @@
       max-width: none;
     }
   }
+
+  @nest & ul {
+    padding-left: 1em;
+  }
 }
 
 .tabDescription {
+}
+
+.tabTitle {
+  composes: responsiveTitle3 from './typography.module.css';
+  margin-top: 0;
+  text-transform: uppercase;
 }
