@@ -2,13 +2,14 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { buildImageObj } from '../lib/helpers'
 import { imageUrlFor } from '../lib/image-url'
+import Container from './container'
 import BlockContent from './block-content'
 
 import styles from './tabs.module.css'
 
-function Tab ({ illustration, title, text }) {
+function TabContent ({ illustration, title, text }) {
   return (
-    <div>
+    <div className={styles.tabContent}>
       {illustration.image && illustration.image.asset && (
         <img
           src={imageUrlFor(buildImageObj(illustration.image))
@@ -18,8 +19,8 @@ function Tab ({ illustration, title, text }) {
             .url()}
         />
       )}
-      <div>
-        {title}
+      <div className={styles.tabDescription}>
+        <h2>{title}</h2>
         {text && <BlockContent blocks={text || []} />}
       </div>
     </div>
@@ -28,11 +29,13 @@ function Tab ({ illustration, title, text }) {
 
 function Tabs ({ features }) {
   return (
-    <div className={styles.root}>
-      {features.map(feature => (
-        <Tab {...feature} key={feature._key} />
-      ))}
-    </div>
+    <Container>
+      <div className={styles.root}>
+        {features.map(feature => (
+          <TabContent {...feature} key={feature._key} />
+        ))}
+      </div>
+    </Container>
   )
 }
 

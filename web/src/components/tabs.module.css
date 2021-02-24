@@ -1,11 +1,49 @@
 @import '../styles/media-queries.css';
 
 .root {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-gap: 2em;
 
+  @media (--media-min-medium) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 4em;
+  }
 }
 
 .tabList {
   display: flex;
   flex-wrap: wrap;
   list-style: none;
+}
+
+.tabContent {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: auto;
+  grid-gap: 2em;
+
+  @nest & img {
+    width: 100%;
+    max-width: 360px;
+    height: auto;
+    margin: 0 auto;
+    border-radius: .25em;
+  }
+
+  @media (--media-min-medium) {
+    
+  }
+
+  @media (--media-min-large) {
+    grid-template-columns: 1fr 2fr;
+
+    @nest & img {
+      max-width: none;
+    }
+  }
+}
+
+.tabDescription {
 }
