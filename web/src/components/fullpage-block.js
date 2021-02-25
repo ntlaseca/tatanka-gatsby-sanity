@@ -31,7 +31,7 @@ const FullpageBlock = props => {
   return (
     <section
       className={styles.root}
-      style={{ backgroundImage: `url(${img})`, backgroundColor: `${colors.value}` }}
+      style={{ backgroundImage: `url("${img}")`, backgroundColor: `${colors.value}` }}
     >
       <div className={styles.wrapper}>
         {header && <h1 className={styles.title}>{header}</h1>}
