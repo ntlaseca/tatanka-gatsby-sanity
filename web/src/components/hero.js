@@ -34,8 +34,8 @@ function Hero(props) {
       {props.video && props.video.asset && (
         <div>
           <ReactPlayer
-            playing
-            loop
+            playing="true"
+            loop="true"
             width="auto"
             height="auto"
             url={[
