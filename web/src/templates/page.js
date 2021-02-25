@@ -5,7 +5,7 @@ import Hero from "../components/hero"
 import GeneralArticle from "../components/general-article"
 import InfoRows from "../components/info-rows"
 import ImageGrid from "../components/image-grid"
-import Tabs from "../components/tabs"
+import Features from "../components/features"
 import CTA from "../components/cta"
 import FullpageBlock from "../components/fullpage-block"
 import ContactForm from "../components/contact-form"
@@ -81,7 +81,7 @@ const Page = (props) => {
           el = <ImageGrid key={c._key} {...c} />;
           break;
         case "featureTabs":
-          el = <Tabs key={c._key} {...c} />;
+          el = <Features key={c._key} {...c} />;
           break;
         case "ctaPlug":
           el = <CTA key={c._key} {...c} />;
