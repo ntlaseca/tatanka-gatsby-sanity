@@ -6,8 +6,15 @@ import BlockContent from './block-content'
 
 import styles from './features.module.css'
 
-function TabContent ({ illustration, title, text }) {
+function TabContent({ illustration, title, text }) {
   const [active, setActive] = useState(0)
+
+  const handleClick = e => {
+    const index = parseInt(e.target.id, 0)
+    if (index !== active) {
+      setActive(index)
+    }
+  }
 
   return (
     <div className={styles.tabContent}>
@@ -28,7 +35,7 @@ function TabContent ({ illustration, title, text }) {
   )
 }
 
-function Features ({ features }) {
+function Features({ features }) {
   return (
     <Container>
       <div className={styles.root}>
@@ -40,4 +47,4 @@ function Features ({ features }) {
   )
 }
 
-export default Features;
+export default Features

@@ -9,11 +9,6 @@
   @media (--media-min-medium) {
     grid-gap: 4em;
   }
-
-  @media (--media-min-large) {
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 4em;
-  }
 }
 
 .tabList {
