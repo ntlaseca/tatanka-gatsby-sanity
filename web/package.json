@@ -28,7 +28,6 @@
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
   },
   "dependencies": {
-    "@bit/semantic-org.semantic-ui-react.tab": "^0.88.2",
     "@cloudflare/wrangler": "^1.13.0",
     "@sanity/block-content-to-react": "^2.0.7",
     "@sanity/image-url": "^0.140.22",
