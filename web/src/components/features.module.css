@@ -71,4 +71,6 @@
   font-family: var(--font-header-typeface);
   margin-top: 0;
   text-transform: uppercase;
+  word-break: break-all;
+  hyphens: auto;
 }
