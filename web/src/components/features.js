@@ -28,7 +28,7 @@ function TabContent({ illustration, title, text }) {
         />
       )}
       <div className={styles.tabDescription}>
-        <h3 className={styles.tabTitle}>{title}</h3>
+        <h2 className={styles.tabTitle}>{title}</h2>
         {text && <BlockContent blocks={text || []} />}
       </div>
     </div>

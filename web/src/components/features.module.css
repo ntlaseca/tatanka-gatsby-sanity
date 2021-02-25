@@ -67,7 +67,7 @@
 }
 
 .tabTitle {
-  composes: responsiveTitle3 from './typography.module.css';
+  composes: responsiveTitle2 from './typography.module.css';
   font-family: var(--font-header-typeface);
   margin-top: 0;
   text-transform: uppercase;
