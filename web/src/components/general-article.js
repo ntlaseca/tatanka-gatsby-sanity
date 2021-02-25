@@ -8,14 +8,14 @@ import Container from './container'
 import styles from './general-article.module.css'
 
 const GeneralArticle = props => (
-  <Container className={styles.root}>
+  <section className={styles.root}>
     <div className={styles.grid}>
       <div className={styles.mainContent}>
         <h1 className={styles.title}>{props.title}</h1>
         <PortableText blocks={props.content} />
       </div>
     </div>
-  </Container>
+  </section>
 )
 
 export default GeneralArticle

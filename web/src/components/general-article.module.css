@@ -1,5 +1,11 @@
+@import '../styles/media-queries.css';
+
 .root {
-  
+  padding: 2rem 2rem 0 2rem;
+
+  @media (--media-min-medium) {
+    padding: 4rem 4rem 0 4rem;
+  }
 }
 
 .title {
