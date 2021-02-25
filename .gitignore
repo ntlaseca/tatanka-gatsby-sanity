@@ -9,3 +9,6 @@
 
 # Ignore hidden files as default
 .*
+
+# Test components
+/web/src/pages/test-page.js

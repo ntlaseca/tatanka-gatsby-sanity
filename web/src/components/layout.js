@@ -1,8 +1,7 @@
 import React from "react";
 
 import Header from "./header";
-import Logo from './icons/logo'
-import Instagram from './icons/instagram'
+import Footer from "./footer";
 
 import '../styles/layout.css'
 import styles from './layout.module.css'
@@ -54,20 +53,10 @@ class Layout extends React.Component {
           scrolled={scrolled}
           textWhite={textWhite}
         />
-        <>{children}</>
-        <footer className={styles.footer}>
-          <div className={styles.footerWrapper}>
-            <div className={styles.companyLogo}>
-              <Logo />
-            </div>
-            <div className={styles.social}>
-              <Instagram />
-            </div>
-            <div className={styles.siteInfo}>
-              Tatanka Travel © {new Date().getFullYear()}. All rights reserved.
-            </div>
-          </div>
-        </footer>
+        <div className={styles.content}>
+          {children}
+        </div>
+        <Footer />
       </>
     );
   }
