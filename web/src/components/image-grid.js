@@ -1,7 +1,6 @@
 import React from "react";
 import { buildImageObj } from '../lib/helpers'
 import { imageUrlFor } from '../lib/image-url'
-import Container from "./container"
 
 import styles from "./image-grid.module.css"
 
@@ -24,15 +23,16 @@ function ProfileCard ({ image, categoryLink }) {
   )
 }
 
-function ImageGrid ({ images }) {
+function ImageGrid ({ images, title }) {
   return (
-    <Container>
-      <div className={styles.root}>
+    <section className={styles.root}>
+      <h1 className={styles.gridTitle}>{title}</h1>
+      <div className={styles.grid}>
         {images.map(image => (
           <ProfileCard {...image} key={image._key} />
         ))}
       </div>
-    </Container>
+    </section>
   )
 }
 
