@@ -1,13 +1,14 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React, { useState } from 'react'
 import { buildImageObj } from '../lib/helpers'
 import { imageUrlFor } from '../lib/image-url'
 import Container from './container'
 import BlockContent from './block-content'
 
-import styles from './tabs.module.css'
+import styles from './features.module.css'
 
 function TabContent ({ illustration, title, text }) {
+  const [active, setActive] = useState(0)
+
   return (
     <div className={styles.tabContent}>
       {illustration.image && illustration.image.asset && (
@@ -27,7 +28,7 @@ function TabContent ({ illustration, title, text }) {
   )
 }
 
-function Tabs ({ features }) {
+function Features ({ features }) {
   return (
     <Container>
       <div className={styles.root}>
@@ -39,4 +40,4 @@ function Tabs ({ features }) {
   )
 }
 
-export default Tabs;
+export default Features;
