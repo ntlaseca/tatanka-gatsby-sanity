@@ -25,7 +25,8 @@ const bgImage = illustration => {
 }
 
 const FullpageBlock = props => {
-  const img = bgImage(props.illustration)
+  const img = bgImage(props.illustration) 
+
   const { body, colors, cta, header, image } = props
   return (
     <section
