@@ -23,11 +23,11 @@
 .companyLogo {
 
   @nest & svg {
-    width: 100%;
-    max-height: 3rem;
+    width: 3rem;
+    height: auto;
 
     @media (--media-min-medium) {
-      max-height: 4rem;
+      width: 4rem;
     }
   }
 }
@@ -50,12 +50,11 @@
 }
 
 .social {
-  display: flex;
   margin-left: auto;
 
   @nest & svg {
-    width: 100%;
-    max-height: 1.5rem;
+    width: 1.5rem;
+    height: auto;
     padding-left: 1.5rem;
     fill: var(--color-yellow);
     transition: all 200ms ease;
@@ -66,6 +65,11 @@
 
     &:first-child {
       padding-left: 0;
+    }
+  }
+
+  @media (--media-min-medium) {
+    @nest & svg {
     }
   }
 }
