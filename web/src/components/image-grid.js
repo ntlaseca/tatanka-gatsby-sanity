@@ -1,17 +1,15 @@
-import React from "react";
-import { Link } from "gatsby";
+import React from 'react'
+import { Link } from 'gatsby'
 import { buildImageObj } from '../lib/helpers'
 import { imageUrlFor } from '../lib/image-url'
 
-import styles from "./image-grid.module.css"
+import styles from './image-grid.module.css'
 
-function ProfileCard ({ image, categoryLink }) {
+function ProfileCard({ image, categoryLink }) {
   return (
     <Link to={`/what-we-do#${image.caption.replace(/\s+/g, '-').toLowerCase()}`}>
       <div className={styles.imgContainer}>
-        <div className={styles.textOverlay}>
-          {image.caption}
-        </div>
+        <div className={styles.textOverlay}>{image.caption}</div>
         {image && image.asset && (
           <img
             src={imageUrlFor(buildImageObj(image))
@@ -19,6 +17,7 @@ function ProfileCard ({ image, categoryLink }) {
               .height(720)
               .fit('crop')
               .url()}
+            alt={image.alt}
           />
         )}
       </div>
@@ -26,7 +25,7 @@ function ProfileCard ({ image, categoryLink }) {
   )
 }
 
-function ImageGrid ({ images, title }) {
+function ImageGrid({ images, title }) {
   return (
     <section className={styles.root}>
       <h1 className={styles.gridTitle}>{title}</h1>
@@ -41,7 +40,7 @@ function ImageGrid ({ images, title }) {
 
 ProfileCard.defaultProps = {
   caption: '',
-  categoryLink: ''
+  categoryLink: '',
 }
 
 export default ImageGrid

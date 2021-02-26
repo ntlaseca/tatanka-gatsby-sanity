@@ -1,6 +1,7 @@
 @import './vars.css';
 
 html {
+  font-display: optional;
   font-family: 'Cabin', sans-serif;
   font-size: var(--font-base-size);
   line-height: var(--font-base-line-height);

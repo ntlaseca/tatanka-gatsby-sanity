@@ -1,5 +1,6 @@
 import S from '@sanity/desk-tool/structure-builder'
-import { MdBusiness as PageIcon, MdMenu, MdSettings, MdHome } from 'react-icons/md'
+import { MdMenu } from "react-icons/md"
+import { GoBrowser as PageIcon, GoHome, GoSettings } from "react-icons/go"
 import landingPages from './src/structure/landingPages'
 import PreviewIFrame from './src/components/previewIFrame'
 
@@ -15,7 +16,7 @@ export default () =>
       S.documentListItem()
         .schemaType('siteSettings')
         .title('Site settings')
-        .icon(MdSettings)
+        .icon(GoSettings)
         .child(
           S.document()
             .schemaType('siteSettings')
@@ -25,7 +26,7 @@ export default () =>
       S.documentListItem()
         .title('Frontpage')
         .schemaType('page')
-        .icon(MdHome)
+        .icon(GoHome)
         .child(
           S.document()
             .schemaType('page')

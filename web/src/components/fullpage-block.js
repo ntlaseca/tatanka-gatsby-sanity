@@ -4,7 +4,7 @@ import { getFluidGatsbyImage } from 'gatsby-source-sanity'
 import { buildImageObj } from '../lib/helpers'
 import { imageUrlFor } from '../lib/image-url'
 import BlockContent from './block-content'
-import CTALink from './CTALink'
+import CTALink from './cta-link'
 import clientConfig from '../../client-config'
 
 import { button } from './button.module.css'

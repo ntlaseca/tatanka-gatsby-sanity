@@ -114,7 +114,7 @@ const Page = (props) => {
     <Layout>
       <SEO
         title={pageTitle}
-        description={site.description}
+        description={site.openGraph.description}
         keywords={site.keywords}
       />
       <div>{content}</div>
