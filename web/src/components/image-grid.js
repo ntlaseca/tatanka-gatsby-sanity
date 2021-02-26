@@ -17,6 +17,7 @@ function ProfileCard({ image, categoryLink }) {
               .height(720)
               .fit('crop')
               .url()}
+            alt={image.alt}
           />
         )}
       </div>

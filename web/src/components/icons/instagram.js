@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Instagram = () => (
-  <a href="https://www.instagram.com/tatankatravel/" target="_blank" rel="noopener noreferrer">
+  <a href="https://www.instagram.com/tatankatravel/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"

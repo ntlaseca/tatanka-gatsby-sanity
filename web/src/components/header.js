@@ -9,7 +9,7 @@ const Header = ({ onHideNav, onShowNav, showNav }) => (
   <div className={styles.root}>
     <div className={styles.wrapper}>
       <div className={styles.branding}>
-        <Link to='/'>
+        <Link to='/' aria-label="Tatanka Travel logo">
           <Icon symbol='logo' />
         </Link>
       </div>
