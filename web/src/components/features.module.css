@@ -71,6 +71,8 @@
   font-family: var(--font-header-typeface);
   margin-top: 0;
   text-transform: uppercase;
-  word-break: break-all;
-  hyphens: auto;
+
+  @media (--media-min-medium) {
+    font-size: 2.5vmax;
+  }
 }
