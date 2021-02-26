@@ -96,15 +96,16 @@
   font-weight: 900;
   font-size: var(--font-title3-size);
   line-height: var(--font-title3-line-height);
+  letter-spacing: .1rem;
   margin: 0 0 2rem 0;
   animation: fadeUp ease 1s;
 
-  @media (--media-min-medium) {
+  @media (--media-min-small) {
     font-size: var(--font-title2-size);
     line-height: var(--font-title2-line-height);
   }
 
-  @media (--media-min-large) {
+  @media (--media-min-medium) {
     font-size: var(--font-title1-size);
     line-height: var(--font-title1-line-height);
   }
@@ -114,6 +115,7 @@
   font-weight: 900;
   font-size: var(--font-large-size);
   line-height: var(--font-large-line-height);
+  letter-spacing: .1rem;
   margin: 1.5rem 0 0.5rem;
 
   @media (--media-min-small) {
@@ -131,6 +133,7 @@
   font-weight: 900;
   font-size: var(--font-large-size);
   line-height: var(--font-large-line-height);
+  letter-spacing: .1rem;
   margin: 1rem 0 0.5rem;
 
   @media (--media-min-small) {
@@ -147,6 +150,7 @@
 .responsiveTitle4 {
   font-size: var(--font-base-size);
   line-height: var(--font-base-line-height);
+  letter-spacing: .1rem;
   margin: 1rem 0 0.5rem;
 
   @media (--media-min-small) {

@@ -1,38 +1,41 @@
 import React from "react";
+import { Link } from "gatsby";
 import { buildImageObj } from '../lib/helpers'
 import { imageUrlFor } from '../lib/image-url'
-import Container from "./container"
 
 import styles from "./image-grid.module.css"
 
 function ProfileCard ({ image, categoryLink }) {
   return (
-    <div className={styles.imgContainer}>
-      <div className={styles.textOverlay}>
-        {image.caption}
+    <Link to={`/what-we-do#${image.caption.replace(/\s+/g, '-').toLowerCase()}`}>
+      <div className={styles.imgContainer}>
+        <div className={styles.textOverlay}>
+          {image.caption}
+        </div>
+        {image && image.asset && (
+          <img
+            src={imageUrlFor(buildImageObj(image))
+              .width(720)
+              .height(720)
+              .fit('crop')
+              .url()}
+          />
+        )}
       </div>
-      {image && image.asset && (
-        <img
-          src={imageUrlFor(buildImageObj(image))
-            .width(720)
-            .height(720)
-            .fit('crop')
-            .url()}
-        />
-      )}
-    </div>
+    </Link>
   )
 }
 
-function ImageGrid ({ images }) {
+function ImageGrid ({ images, title }) {
   return (
-    <Container>
-      <div className={styles.root}>
+    <section className={styles.root}>
+      <h1 className={styles.gridTitle}>{title}</h1>
+      <div className={styles.grid}>
         {images.map(image => (
           <ProfileCard {...image} key={image._key} />
         ))}
       </div>
-    </Container>
+    </section>
   )
 }
 

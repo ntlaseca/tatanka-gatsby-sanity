@@ -1,6 +1,11 @@
 @import '../styles/media-queries.css';
 
+
 .root {
+  padding: 4em;
+}
+
+.grid {
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 2em;
@@ -18,6 +23,16 @@
 
   @media (--media-min-large) {
     grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.gridTitle {
+  composes: responsiveTitle1 from './typography.module.css';
+  font-family: var(--font-header-typeface);
+  text-align: center;
+
+  @media (--media-min-medium) {
+    text-align: left;
   }
 }
 

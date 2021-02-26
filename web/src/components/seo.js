@@ -29,7 +29,7 @@ function SEO({ description, lang, meta, keywords, title, image, bodyAttr, gradie
             bodyAttributes={bodyAttr}
             htmlAttributes={{ lang }}
             title={pageTitle}
-            titleTemplate={pageTitle === siteTitle ? siteTitle : `%s | ${siteTitle}`}
+            titleTemplate={pageTitle === siteTitle ? siteTitle : `%s → ${siteTitle}`}
             meta={[
               {
                 name: "description",

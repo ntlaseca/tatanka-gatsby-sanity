@@ -1,7 +1,7 @@
 require('dotenv').config()
 
 const path = require('path')
-const clientConfig = require("./client-config");
+const clientConfig = require('./client-config')
 
 module.exports = {
   plugins: [
@@ -11,15 +11,21 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'images',
-        path: path.join(__dirname, 'src', 'images')
-      }
+        path: path.join(__dirname, 'src', 'images'),
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        icon: 'src/images/icon.png',
+      },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'videos',
-        path: path.join(__dirname, 'src', 'videos')
-      }
+        path: path.join(__dirname, 'src', 'videos'),
+      },
     },
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
@@ -31,8 +37,8 @@ module.exports = {
         // and add a token with read permissions
         token: process.env.SANITY_TOKEN,
         watchMode: true,
-        overlayDrafts: false
-      }
-    }
-  ]
+        overlayDrafts: false,
+      },
+    },
+  ],
 }

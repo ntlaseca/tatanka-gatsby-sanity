@@ -13,7 +13,6 @@
 .title {
   composes: responsiveTitle1 from './typography.module.css';
   font-family: var(--font-header-typeface);
-  letter-spacing: .2rem;
 }
 
 .mainImage {
