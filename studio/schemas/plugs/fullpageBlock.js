@@ -45,7 +45,7 @@ export default {
           { title: "Sand", value: "#ab8762" },
           { title: "Brown", value: "#360a03" },
           { title: "Black", value: "#222222" },
-          { title: "White", value: "white" }
+          { title: "White", value: "#dbdbcf" },
         ]
       }
     },
