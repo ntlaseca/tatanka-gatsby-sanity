@@ -68,3 +68,6 @@ yarn.lock
 .pnp.js
 # Yarn Integrity file
 .yarn-integrity
+
+#backup/old files
+*.old
