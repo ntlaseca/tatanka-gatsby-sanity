@@ -67,6 +67,7 @@ const ContactForm = props => {
           onSubmit={handleOnSubmit}
         >
           <div className={styles.firstName}>
+            <label type="text">First name</label>
             <input
               className={styles.textInput}
               type="text"
@@ -76,6 +77,7 @@ const ContactForm = props => {
             />
           </div>
           <div className={styles.lastName}>
+            <label>Last name</label>
             <input
               className={styles.textInput}
               type="text"
@@ -85,6 +87,7 @@ const ContactForm = props => {
             />
           </div>
           <div className={styles.email}>
+            <label type="text">Email</label>
             <input
               className={styles.textInput}
               type="email"
@@ -94,10 +97,11 @@ const ContactForm = props => {
             />
           </div>
           <div className={styles.phone}>
+            <label type="text">Phone</label>
             <input className={styles.textInput} type="tel" name="phone" placeholder="Phone" />
           </div>
           <div className={styles.departure}>
-            <label>Depart</label>
+            <label type="text">Depart</label>
             <input
               className={styles.textInput}
               type="date"
@@ -107,7 +111,7 @@ const ContactForm = props => {
             />
           </div>
           <div className={styles.return}>
-            <label>Return</label>
+            <label type="text">Return</label>
             <input
               className={styles.textInput}
               type="date"
@@ -117,13 +121,15 @@ const ContactForm = props => {
             />
           </div>
           <div className={styles.from}>
+            <label type="text">From</label>
             <input className={styles.textInput} type="text" name="From" placeholder="From" />
           </div>
           <div className={styles.to}>
+            <label type="text">To</label>
             <input className={styles.textInput} type="text" name="To" placeholder="To" />
           </div>
           <div className={styles.interests}>
-            <label>Interests</label>
+            <label type="text">Interests</label>
             <div className={styles.formGroup}>
               <div className={styles.formCheck}>
                 <input
@@ -150,6 +156,7 @@ const ContactForm = props => {
             </div>
           </div>
           <div className={styles.message}>
+            <label type="text">Details</label>
             <textarea
               className="messageText"
               name="Message"
