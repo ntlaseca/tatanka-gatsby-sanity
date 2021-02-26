@@ -17,7 +17,7 @@ function TabContent({ illustration, title, text }) {
   }
 
   return (
-    <div className={styles.tabContent}>
+    <div className={styles.tabContent} id={title.replace(/\s+/g, '-').toLowerCase()}>
       {illustration.image && illustration.image.asset && (
         <img
           src={imageUrlFor(buildImageObj(illustration.image))
