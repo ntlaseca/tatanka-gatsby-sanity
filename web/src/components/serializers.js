@@ -1,6 +1,6 @@
 import React from "react";
-import Figure from "./Figure";
-import MainImage from "./MainImage";
+import Figure from "./figure";
+import MainImage from "./main-image";
 import ReactPlayer from "react-player";
 import InstagramEmbed from "react-instagram-embed";
 

@@ -1,7 +1,7 @@
 import React from "react";
 import Container from "./container"
-import PortableText from "./portableText";
-import CTALink from "./CTALink";
+import PortableText from "./portable-text";
+import CTALink from "./cta-link";
 
 import { button } from "./button.module.css"
 import styles from "./cta.module.css"

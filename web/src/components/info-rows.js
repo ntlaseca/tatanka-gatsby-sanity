@@ -1,8 +1,8 @@
 import React from "react";
 import { getFluidGatsbyImage } from "gatsby-source-sanity";
 
-import PortableText from "./portableText";
-import CTALink from "./CTALink";
+import PortableText from "./portable-text";
+import CTALink from "./cta-link";
 import clientConfig from "../../client-config";
 import { cn } from "../lib/helpers"
 

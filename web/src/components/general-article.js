@@ -1,9 +1,6 @@
 import React from 'react'
 
-import {buildImageObj} from '../lib/helpers'
-import {imageUrlFor} from '../lib/image-url'
-import PortableText from './portableText'
-import Container from './container'
+import PortableText from './portable-text'
 
 import styles from './general-article.module.css'
 
