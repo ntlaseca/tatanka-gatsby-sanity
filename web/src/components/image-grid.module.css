@@ -3,6 +3,7 @@
 
 .root {
   padding: 4em;
+  overflow: hidden;
 }
 
 .grid {
@@ -30,10 +31,7 @@
   composes: responsiveTitle1 from './typography.module.css';
   font-family: var(--font-header-typeface);
   text-align: center;
-
-  @media (--media-min-medium) {
-    text-align: left;
-  }
+  margin-bottom: 1em;
 }
 
 .imgContainer {
