@@ -34,14 +34,19 @@ function Hero(props) {
       {props.video && props.video.asset && (
         <div>
           <ReactPlayer
-            playing={true}
-            loop={true}
+            playing
+            muted
+            loop
             width="auto"
             height="auto"
             url={[
               { src: BisonWebm, type: 'video/webm' },
               { src: BisonMp4, type: 'video/mp4' },
             ]}
+            config={{file: { attributes: {
+              autoPlay: true,
+              muted: true
+            }}}}
           />
         </div>
       )}
