@@ -18,16 +18,19 @@ const Header = ({ onHideNav, onShowNav, showNav }) => (
         <Icon symbol='hamburger' />
       </button>
 
-      <nav className={cn(styles.nav, showNav && styles.showNav)}>
-        <ul>
-          <li>
-            <Link to='/aviation/'>Aviation</Link>
-          </li>
-          <li>
-            <Link to='/what-we-do/'>What We Do</Link>
-          </li>
-        </ul>
-      </nav>
+      {showNav && (
+        <nav className={cn(styles.nav, showNav && styles.showNav)}>
+          <ul>
+            <li>
+              <Link to='/aviation/'>Aviation</Link>
+            </li>
+            <li>
+              <Link to='/what-we-do/'>What We Do</Link>
+            </li>
+          </ul>
+        </nav>
+      )}
+
     </div>
   </div>
 )
