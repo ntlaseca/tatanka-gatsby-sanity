@@ -1,7 +1,7 @@
 import React from 'react'
 import { getFluidGatsbyImage } from 'gatsby-source-sanity'
 import Icon from './icons'
-import ReactPlayer from 'react-player'
+import ReactPlayer from 'react-player/lazy'
 import BisonMp4 from '../videos/bison.mp4'
 import BisonWebm from '../videos/bison.webm'
 import clientConfig from '../../client-config'

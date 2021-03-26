@@ -10,7 +10,7 @@
   },
   "license": "MIT",
   "engines": {
-    "node": "10.x"
+    "node": "15.x"
   },
   "scripts": {
     "build": "gatsby build",
@@ -53,7 +53,7 @@
     "react-dom": "^16.14.0",
     "react-helmet": "^5.2.1",
     "react-instagram-embed": "^2.0.0",
-    "react-player": "^1.15.2",
+    "react-player": "^2.9.0",
     "sanity-mux-player": "0.0.27"
   },
   "devDependencies": {
